@@ -35,7 +35,7 @@ npm run start
 
 ## Live
 
-<a href="https://amberheard-clickergame.netlify.app/"https://amberheard-clickergame.netlify.app/</a>
+<a href="https://amberheard-clickergame.netlify.app/">https://amberheard-clickergame.netlify.app/</a>
 
 ## Resources
 
