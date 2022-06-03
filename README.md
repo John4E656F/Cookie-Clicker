@@ -15,7 +15,6 @@ Original [Cookie Clicker](http://orteil.dashnet.org/cookieclicker/) is a Javascr
 | [Copilot](https://copilot.github.com/)        | AI pair programmer                   |
 | [Prettier](https://prettier.io/)              | Code formatter                       |
 
-## Installation
 
 ## Installation
 
