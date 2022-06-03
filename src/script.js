@@ -121,14 +121,14 @@ function loadGame(){
     }
 };
 
-// window.onload = function () {
-//     loadGame();
-//     updateEarning();
-//     document.getElementById("counter").innerHTML = counter+"$";
-//     document.getElementById("lawyerCost").innerHTML = lawyerCost+"$";
-//     document.getElementById("lawyers").innerHTML = lawyers;
-//     document.getElementById("makeupCost").innerHTML = makeupCost+"$";
-//     document.getElementById("makeup").innerHTML = makeup;
-//     document.getElementById("cryCost").innerHTML = cryCost+"$";
-//     document.getElementById("cry").innerHTML = cry;
-// };
+window.onload = function () {
+    loadGame();
+    updateEarning();
+    document.getElementById("counter").innerHTML = counter+"$";
+    document.getElementById("lawyerCost").innerHTML = lawyerCost+"$";
+    document.getElementById("lawyers").innerHTML = lawyers;
+    document.getElementById("makeupCost").innerHTML = makeupCost+"$";
+    document.getElementById("makeup").innerHTML = makeup;
+    document.getElementById("cryCost").innerHTML = cryCost+"$";
+    document.getElementById("cry").innerHTML = cry;
+};
