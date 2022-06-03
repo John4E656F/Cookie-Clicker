@@ -19,7 +19,7 @@ Original [Cookie Clicker](http://orteil.dashnet.org/cookieclicker/) is a Javascr
 ## Installation
 
 ```bash
-git clone https://github.com/eszczepan/Cookie-clicker
+git clone https://github.com/John4E656F/Cookie-Clicker.git
 npm install
 npm run start
 ```
