@@ -19,9 +19,21 @@
     </div>
     <div  class="my-5 mx-auto m-2  w-96 text-center overflow-hidden rounded-2xl">
       <button onclick="saveGame()" id="saveGame" class="m-2 p-3 rounded-full bg-white" >Save Game</button>
+      <button onclick="resetGame()" id="resetGame" class="m-2 p-3 rounded-full bg-white" >Reset Game</button>
     </div>
   </div>
   <div class="flex-col justify-center">
+
+    <table class="my-5 mx-auto w-96 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-slate-200 shadow-xl" onclick="buyMakeup()">
+      <tr>
+        <td id="image"><img src=""></td>
+        <td id="nameAndCost">
+          <p>Make up</p>
+          <p><span id="makeupCost">30$</span></p>
+        </td>
+        <td id="amount"><span id="makeup">0</span></td>
+      </tr>
+    </table>
     
     <div onclick="buyMakeup()" id="bMakeup" class="my-5 mx-auto w-96 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-slate-200 shadow-xl">
       <button  class="m-5" >Makeup : <span id="makeupCost">30$</span> -- <span id="makeup">0</span></button>
@@ -38,6 +50,6 @@
 
 
   
-  <script type="module" src="./src/script.js"></script>
+  <script type="module" src="./src/scriptOld.js"></script>
 </body>
 </html>
