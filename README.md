@@ -1,12 +1,12 @@
 Original [Cookie Clicker](http://orteil.dashnet.org/cookieclicker/) is a Javascript game released by [Orteil](https://cookieclicker.fandom.com/wiki/Orteil) on August 8, 2013.
 
 <div align="center">
-  Image Coming Soon
-  ``<img src="https://github.com/John4E656F/Cookie-Clicker/blob/main/assets/ahc-design.PNG" alt="">``
+
+  ``<img src="[https://github.com/John4E656F/Cookie-Clicker/blob/main/assets/ahc-design.PNG](https://github.com/John4E656F/Cookie-Clicker/blob/main/assets/demo.PNG)" alt="Alpha version of the game">``
  </div>
 
 
-![Amber Heard Clicker Game](/assets/demo.png/ "Alpha version of the game")
+
 
 
  
@@ -50,6 +50,5 @@ npm run start
 - Design [Design sauce](https://www.figma.com/file/miAUel02j6FYUso3k7AyEF/Coockie-Clicker?node-id=18%3A5)
 <div align="center">
 
-  <img src="/assets/ahc-design.png/" alt="AmberHeard-clickergame-design">
-
+  ``<img src="https://github.com/John4E656F/Cookie-Clicker/blob/main/assets/ahc-design.PNG" alt="">``
  </div>
