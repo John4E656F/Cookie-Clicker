@@ -8,6 +8,59 @@ document.getElementById("amberHeard").addEventListener('click', ()=> {
     document.getElementById("counter").innerHTML = counter+"$";
 });
 
+let apCost = 50;
+let ap = 0;
+let apMulti = 1;
+
+document.getElementById('bAP').onclick = function buyAP(){
+    if(counter >= apCost){
+        counter -= apCost;
+        ap += 1;
+        clickEarning *= apMulti;
+        apMulti += 1;
+        apCost = Math.round(apCost * 1.5);
+        document.getElementById("counter").innerHTML = counter+"$";
+        document.getElementById("apCost").innerHTML = apCost+"$";
+        document.getElementById("apMulti").innerHTML = ap+"x";
+        updateEarning();
+        updateClickEarning();
+    }
+}
+
+let camCost = 50;
+let camMulti = 1;
+
+document.getElementById('bCam').onclick = function buyCam(){
+    if(counter >= camCost){
+        counter -= camCost;
+        clickEarning *= camMulti;
+        camMulti += 10;
+        camCost = Math.round(camCost * 1.5);
+        document.getElementById("counter").innerHTML = counter+"$";
+        document.getElementById("camCost").innerHTML = camCost+"$";
+        document.getElementById("camMulti").innerHTML = camMulti+"x";
+        updateEarning();
+        updateClickEarning();
+    }
+}
+
+let milaniCost = 50;
+let milanimulti = 1;
+
+document.getElementById('bMilani').onclick = function buyMilani(){
+    if(counter >= milaniCost){
+        counter -= milaniCost;
+        clickEarning *= milaniMulti;
+        milanimulti += 100;
+        milaniCost = Math.round(camCost * 1.5);
+        document.getElementById("counter").innerHTML = counter+"$";
+        document.getElementById("milaniCost").innerHTML = milaniCost+"$";
+        document.getElementById("milaniMulti").innerHTML = milanimulti+"x";
+        updateEarning();
+        updateClickEarning();
+    }
+}
+
 let jamesCost = 30;
 let james = 0;
 
@@ -83,6 +136,14 @@ function updateEarning(){
     earnPerSec = james + lawyers * 5 + elon * 10;
     document.getElementById("earn").innerHTML = earnPerSec+"$";
 };
+
+let earnPerClick = 1;
+
+function updateClickEarning(){
+    /* Updating the earnPerClick variable and updating the earnPerClick on the page. */
+    earnPerClick = apMulti + camMulti * 10 + milaniMulti * 100;
+    document.getElementById("multi").innerHTML = earnPerClick+"$";
+}
 
 //@note savegame
 /* Saving the game. */
