@@ -2,7 +2,7 @@ Original [Cookie Clicker](http://orteil.dashnet.org/cookieclicker/) is a Javascr
 
 <div align="center">
   Image Coming Soon
-  ``<img src="/assets/demo.png" alt="">``
+  ``<img src="https://github.com/John4E656F/Cookie-Clicker/blob/main/assets/ahc-design.PNG" alt="">``
  </div>
 
 
