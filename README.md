@@ -1,4 +1,9 @@
-Made by: ![Team7](https://github.com/John4E656F/Cookie-Clicker/blob/main/assets/Team7%20Logo.png "Team7")
+
+<div align="center">
+Made by:
+  <img src="https://github.com/John4E656F/Cookie-Clicker/blob/main/assets/Team7%20Logo.png" alt="Team7">
+ </div>
+ 
 Members : 
 - [John](https://github.com/John4E656F)
 - [Quentin](https://github.com/QuentCn)
