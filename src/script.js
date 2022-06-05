@@ -1,4 +1,4 @@
-let counter = 0;
+let counter = 100000;
 let clickEarning = 1;
 
 /* Adding an event listener to the element with the id "amberHeard" and when the element is clicked, it
@@ -6,27 +6,27 @@ will add the value of clickEarning to the counter and update the counter on the 
 document.getElementById("amberHeard").addEventListener('click', ()=> {
     counter += clickEarning;
     document.getElementById("counter").innerHTML = counter+"$";
-})
+});
 
-let makeupCost = 30;
-let makeup = 0;
+let jamesCost = 30;
+let james = 0;
 
-/* A function that is called when the button with the id "bMakeup" is clicked. */
-document.getElementById("bMakeup").onclick = function buyMakeup(){
-    /* Checking if the counter is greater than or equal to the makeupCost. If it is, it will subtract
-    the makeupCost from the counter, add 1 to the makeup, and multiply the makeupCost by 1.1. Then
-    it will update the counter, makeupCost, and makeup on the page. */
-    if(counter >= makeupCost) {
-        counter -= makeupCost;
-        makeup += 1;
-        makeupCost = Math.round(makeupCost * 1.1);
+/* A function that is called when the button with the id "bJames" is clicked. */
+document.getElementById("bJames").onclick = function buyJames(){
+    /* Checking if the counter is greater than or equal to the jamesCost. If it is, it will subtract
+    the jamesCost from the counter, add 1 to the james, and multiply the jamesCost by 1.1. Then
+    it will update the counter, jamesCost, and james on the page. */
+    if(counter >= jamesCost) {
+        counter -= jamesCost;
+        james += 1;
+        jamesCost = Math.round(jamesCost * 1.1);
 
         document.getElementById("counter").innerHTML = counter+"$";
-        document.getElementById("makeupCost").innerHTML = makeupCost+"$";
-        document.getElementById("makeup").innerHTML = makeup;
+        document.getElementById("jamesCost").innerHTML = jamesCost+"$";
+        document.getElementById("james").innerHTML = james;
         updateEarning();
     }
-}
+};
 
 let lawyerCost = 500;
 let lawyers = 0;
@@ -46,33 +46,33 @@ document.getElementById("bLawyer").onclick = function buyLawyer(){
         document.getElementById("lawyers").innerHTML = lawyers;
         updateEarning();
     }
-}
+};
 
-let cryCost = 1000;
-let cry = 0;
+let elonCost = 1000;
+let elon = 0;
 
-/* A function that is called when the button with the id "bCry" is clicked. */
-document.getElementById("bCry").onclick = function buyCry(){
-    /* Checking if the counter is greater than or equal to the cryCost. If it is, it will subtract the
-    cryCost from the counter, add 1 to the cry, and multiply the cryCost by 1.3. Then it will update
-    the counter, cryCost, and cry on the page. */
-    if(counter >= cryCost) {
-        counter -= cryCost;
-        cry += 1;
-        cryCost = Math.round(cryCost * 1.3);
+/* A function that is called when the button with the id "bElon" is clicked. */
+document.getElementById("bElon").onclick = function buyElon(){
+    /* Checking if the counter is greater than or equal to the celonost. If it is, it will subtract the
+    elonCost from the counter, add 1 to the elon, and multiply the celonost by 1.3. Then it will update
+    the counter, elonCost, and elon on the page. */
+    if(counter >= elonCost) {
+        counter -= elonCost;
+        elon += 1;
+        elonCost = Math.round(elonCost * 1.3);
 
         document.getElementById("counter").innerHTML = counter+"$";
-        document.getElementById("cryCost").innerHTML = cryCost+"$";
-        document.getElementById("cry").innerHTML = cry;
+        document.getElementById("elonCost").innerHTML = elonCost+"$";
+        document.getElementById("elon").innerHTML = elon;
         updateEarning();
     }
-}
+};
 
-/* Adding the value of makeup, lawyers, and cry to the counter every second. */
+/* Adding the value of james, lawyers, and elon to the counter every second. */
 setInterval (function() {
-    counter += makeup;
+    counter += james;
     counter += lawyers * 5;
-    counter += cry * 10;
+    counter += elon * 10;
     document.getElementById("counter").innerHTML = counter+"$";
 }, 1000); // 1000ms = 1s
 
@@ -80,54 +80,59 @@ let earnPerSec = 0;
 
 function updateEarning(){
     /* Updating the earnPerSec variable and updating the earnPerSec on the page. */
-    earnPerSec = makeup + lawyers * 5 + cry * 10;
+    earnPerSec = james + lawyers * 5 + elon * 10;
     document.getElementById("earn").innerHTML = earnPerSec+"$";
 };
 
+//@note savegame
 /* Saving the game. */
-document.getElementById("saveGame").onclick = function saveGame() {
+document.getElementById("saveGame").onclick = function gameSaved() {
+    console.log("Game Saved");
     let gameSave = {
         counter: counter,
         earnPerSec: earnPerSec,
-        makeupCost: makeupCost,
-        makeup: makeup,
+        jamesCost: jamesCost,
+        james: james,
         lawyerCost: lawyerCost,
         lawyers: lawyers,
-        cryCost: cryCost,
-        cry: cry
+        elonCost: elonCost,
+        elon: elon
     }
     localStorage.setItem("gameSave", JSON.stringify(gameSave));
 };
 
+//@note autoSave
 /* Saving the game every 30 seconds. */
 setInterval (function() {
-    saveGame();
+    gameSaved();
 }, 30000); // 30000ms = 30s
 
-/**
- * If there is a gameSave in localStorage, then set the variables to the values in the gameSave.
+//@note loadgame
+ /* If there is a gameSave in localStorage, then set the variables to the values in the gameSave.
  */
 function loadGame(){
     let gameSave = JSON.parse(localStorage.getItem("gameSave"));
     if(gameSave !== null){
         counter = gameSave.counter;
         earnPerSec = gameSave.earnPerSec;
-        makeupCost = gameSave.makeupCost;
-        makeup = gameSave.makeup;
+        jamesCost = gameSave.jamesCost;
+        james = gameSave.james;
         lawyerCost = gameSave.lawyerCost;
         lawyers = gameSave.lawyers;
-        cryCost = gameSave.cryCost;
-        cry = gameSave.cry;
+        elonCost = gameSave.elonCost;
+        elon = gameSave.elon;
     }
 };
 
+//@note resetGame
 document.getElementById("resetGame").onclick = function resetGame(){
     if(confirm('Are you sure you want to reset the game?')){
         localStorage.removeItem("gameSave");
         location.reload();
     }
-}
+};
 
+//@note onLoad
 /* Updating the page with the values of the variables. */
 window.onload = function () {
     loadGame();
@@ -135,16 +140,76 @@ window.onload = function () {
     document.getElementById("counter").innerHTML = counter+"$";
     document.getElementById("lawyerCost").innerHTML = lawyerCost+"$";
     document.getElementById("lawyers").innerHTML = lawyers;
-    document.getElementById("makeupCost").innerHTML = makeupCost+"$";
-    document.getElementById("makeup").innerHTML = makeup;
-    document.getElementById("cryCost").innerHTML = cryCost+"$";
-    document.getElementById("cry").innerHTML = cry;
+    document.getElementById("jamesCost").innerHTML = jamesCost+"$";
+    document.getElementById("james").innerHTML = james;
+    document.getElementById("elonCost").innerHTML = elonCost+"$";
+    document.getElementById("elon").innerHTML = elon;
 };
 
+//@note Ctrl + S save
 /* Saving the game when the user presses Ctrl + S. */
 document.addEventListener('keydown', function(event) {
     if(event.ctrlKey && event.keyCode == 83) { // Ctrl + S
         event.preventDefault();
         saveGame();
+    }
+});
+
+const helperList = document.getElementById("helperList");
+const shopList = document.getElementById("shopList");
+const upgradeList = document.getElementById("upgradeList");
+
+//@note helperBtn
+document.getElementById("helper").addEventListener('click', ()=> {
+
+ /* Checking if the helperList has the class hidden. If it does, it will remove the class hidden from
+ the helperList. If the shopList and upgradeList do not have the class hidden, it will add the class
+ hidden to the shopList and upgradeList. If the helperList does not have the class hidden, it will
+ add the class hidden to the helperList. */
+ if (helperList.classList.contains('hidden')) {
+     helperList.classList.remove('hidden');
+     if(shopList.querySelector('hidden') !== 'hidden' && upgradeList.querySelector('hidden') !== 'hidden'){
+         shopList.classList.add('hidden');
+         upgradeList.classList.add('hidden');
+     };
+ } else {
+     helperList.classList.add('hidden');
+ }
+
+});
+
+//@note shopBtn
+document.getElementById("shop").addEventListener('click', ()=> {
+
+    /* Checking if the shopList has the class hidden. If it does, it will remove the class hidden from
+    the shopList. If the helperList and upgradeList do not have the class hidden, it will add the
+    class hidden to the helperList and upgradeList. If the shopList does not have the class hidden,
+    it will add the class hidden to the shopList. */
+    if (shopList.classList.contains('hidden')) {
+        shopList.classList.remove('hidden');
+        if(helperList.querySelector('hidden') !== 'hidden' && upgradeList.querySelector('hidden') !== 'hidden'){
+            helperList.classList.add('hidden');
+            upgradeList.classList.add('hidden');
+        };
+    } else {
+        shopList.classList.add('hidden');
+    }
+});
+
+//@note upgradeBtn
+document.getElementById("upgrade").addEventListener('click', ()=> {
+
+    /* Checking if the upgradeList has the class hidden. If it does, it will remove the class hidden
+    from the upgradeList. If the shopList and helperList do not have the class hidden, it will add
+    the class hidden to the shopList and helperList. If the upgradeList does not have the class
+    hidden, it will add the class hidden to the upgradeList. */
+    if (upgradeList.classList.contains('hidden')) {
+        upgradeList.classList.remove('hidden');
+        if(shopList.querySelector('hidden') !== 'hidden' && shopList.querySelector('hidden') !== 'hidden'){
+            shopList.classList.add('hidden');
+            shopList.classList.add('hidden');
+        };
+    } else {
+        upgradeList.classList.add('hidden');
     }
 });
