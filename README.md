@@ -1,8 +1,6 @@
 Original [Cookie Clicker](http://orteil.dashnet.org/cookieclicker/) is a Javascript game released by [Orteil](https://cookieclicker.fandom.com/wiki/Orteil) on August 8, 2013.
-<div align="center">
 
-<img src="./readme-assets/amberheardclickergame.png" alt="">
- </div>
+![Amber Heard Clicker Game](/assets//readme-assets/amberheardclickergame.png "Alpha version of the game")
 
  
  ## Technologies
