@@ -6,7 +6,7 @@ Original [Cookie Clicker](http://orteil.dashnet.org/cookieclicker/) is a Javascr
  </div>
 
 
-![Amber Heard Clicker Game](/assets/amberheardclickergame.png "Alpha version of the game")
+![Amber Heard Clicker Game](/assets/demo.png "Alpha version of the game")
 
 
  
