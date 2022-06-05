@@ -3,6 +3,7 @@ Original [Cookie Clicker](http://orteil.dashnet.org/cookieclicker/) is a Javascr
   Image Coming Soon
   ``<img src="coming soon" alt="AmberHeard-clickergame-screenshot">``
  </div>
+
  
  ## Technologies
  
@@ -14,6 +15,7 @@ Original [Cookie Clicker](http://orteil.dashnet.org/cookieclicker/) is a Javascr
 | [Tailwinds](https://tailwindcss.com/)         | UI library                           |
 | [Copilot](https://copilot.github.com/)        | AI pair programmer                   |
 | [Prettier](https://prettier.io/)              | Code formatter                       |
+| [Figma](https://www.figma.com/)              | Design                      |
 
 
 ## Installation
@@ -40,3 +42,7 @@ npm run start
 ## Resources
 
 - The images used in the project come from [Google](https://google.com/)
+-Design [Design sauce](https://www.figma.com/file/miAUel02j6FYUso3k7AyEF/Coockie-Clicker?node-id=18%3A5)
+<div align="center">
+  ``<img src="https://www.figma.com/file/miAUel02j6FYUso3k7AyEF/Coockie-Clicker?node-id=18%3A5" alt="AmberHeard-clickergame-design">``
+ </div>
