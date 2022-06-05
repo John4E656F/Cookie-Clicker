@@ -6,7 +6,7 @@ Original [Cookie Clicker](http://orteil.dashnet.org/cookieclicker/) is a Javascr
  </div>
 
 
-![Amber Heard Clicker Game](/assets/demo.png "Alpha version of the game")
+![Amber Heard Clicker Game](/assets/demo.png/ "Alpha version of the game")
 
 
  
@@ -50,6 +50,6 @@ npm run start
 - Design [Design sauce](https://www.figma.com/file/miAUel02j6FYUso3k7AyEF/Coockie-Clicker?node-id=18%3A5)
 <div align="center">
 
-  <img src="/assets/ahc-design.png" alt="AmberHeard-clickergame-design">
+  <img src="/assets/ahc-design.png/" alt="AmberHeard-clickergame-design">
 
  </div>
