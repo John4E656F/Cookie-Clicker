@@ -1,3 +1,14 @@
+
+<div align="center">
+Made by:
+  <img src="https://github.com/John4E656F/Cookie-Clicker/blob/main/assets/Team7%20Logo.png" alt="Team7">
+ </div>
+ 
+Members : 
+- [John](https://github.com/John4E656F)
+- [Quentin](https://github.com/QuentCn)
+- [Marcos](https://github.com/NettoMarcos)
+
 Original [Cookie Clicker](http://orteil.dashnet.org/cookieclicker/) is a Javascript game released by [Orteil](https://cookieclicker.fandom.com/wiki/Orteil) on August 8, 2013.
 
 <div align="center">
