@@ -6,7 +6,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="/src/main.css" rel="stylesheet">
 </head>
-<div class="container  select-none h-screen max-w-full">
+<body class="container bg-slate-800 select-none h-screen max-w-full">
+  <div class="m-auto  my-28 w-96 max-w-lg items-center justify-center overflow-hidden rounded-2xl bg-slate-200 shadow-xl">
+    <div  class="my-5 mx-auto m-2  w-96 text-center overflow-hidden rounded-2xl">
+      <button onclick="gameSaved()" id="saveGame" class="m-2 p-3 rounded-full bg-white" >Save Game</button>
+      <button onclick="resetGame()" id="resetGame" class="m-2 p-3 rounded-full bg-white" >Reset Game</button>
+    </div>
+  </div>
   
   <div class="m-auto  my-28 w-96 max-w-lg items-center justify-center overflow-hidden rounded-2xl bg-slate-200 shadow-xl">
     <div class="mt-5 mb-1 px-3 text-center text-lg" id="counter">0$</div>
@@ -18,15 +24,12 @@
     <div class="flex justify-center">
     <img class="h-32 rounded-full" id="amberHeard" src="/src/assets/Ah-nbg.png" />
     </div>
-    <div  class="my-5 mx-auto m-2  w-96 text-center overflow-hidden rounded-2xl">
-      <button onclick="gameSaved()" id="saveGame" class="m-2 p-3 rounded-full bg-white" >Save Game</button>
-      <button onclick="resetGame()" id="resetGame" class="m-2 p-3 rounded-full bg-white" >Reset Game</button>
-    </div>
+    
   </div>
 
   <div class="container mx-auto p4 w-96 bg-slate-800 overflow-hidden rounded-2xl bg-slate-200 shadow-xl">
     <div class="flex flex-row p-4 gap-5 justify-center">
-      <div class="flex-none bg-slate-200 rounded-2xl p-2 px-4 hidden" id="upgrade">Upgrade</div>
+      <div class="flex-none bg-slate-200 rounded-2xl p-2 px-4" id="upgrade">Upgrade</div>
       <div class="flex-none bg-slate-200 rounded-2xl p-2 px-4" id="shop">Shop</div>
       <div class="flex-none bg-slate-200 rounded-2xl p-2 px-4" id="helper">Helper</div>
     </div>
@@ -78,7 +81,7 @@
             <p>Amber Poop</p>
             <p><span id="apCost">30$</span></p>
           </td>
-          <td id="amount"><span id="apMulti">x0</span></td>
+          <td id="amount">Multiplier x<span id="apMulti">x0</span></td>
         </tr>
       </table>
 
@@ -89,7 +92,7 @@
             <p>Camera</p>
             <p><span id="camCost">30$</span></p>
           </td>
-          <td id="amount"><span id="camMulti">x00</span></td>
+          <td id="amount">Multiplier x<span id="camMulti">00</span></td>
         </tr>
       </table>
 
@@ -100,7 +103,7 @@
             <p>Milani</p>
             <p><span id="milaniCost">30$</span></p>
           </td>
-          <td id="amount"><span id="milaniMulti">0</span></td>
+          <td id="amount">Multiplier x<span id="milaniMulti">0</span></td>
         </tr>
       </table>
     </div>

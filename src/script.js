@@ -9,26 +9,24 @@ document.getElementById("amberHeard").addEventListener('click', ()=> {
 });
 
 let apCost = 50;
-let ap = 0;
-let apMulti = 1;
+let apMulti = 0;
 
 document.getElementById('bAP').onclick = function buyAP(){
     if(counter >= apCost){
         counter -= apCost;
-        ap += 1;
         clickEarning *= apMulti;
         apMulti += 1;
         apCost = Math.round(apCost * 1.5);
         document.getElementById("counter").innerHTML = counter+"$";
         document.getElementById("apCost").innerHTML = apCost+"$";
-        document.getElementById("apMulti").innerHTML = ap+"x";
+        document.getElementById("apMulti").innerHTML = apMulti;
         updateEarning();
         updateClickEarning();
     }
 }
 
 let camCost = 50;
-let camMulti = 1;
+let camMulti = 0;
 
 document.getElementById('bCam').onclick = function buyCam(){
     if(counter >= camCost){
@@ -38,14 +36,14 @@ document.getElementById('bCam').onclick = function buyCam(){
         camCost = Math.round(camCost * 1.5);
         document.getElementById("counter").innerHTML = counter+"$";
         document.getElementById("camCost").innerHTML = camCost+"$";
-        document.getElementById("camMulti").innerHTML = camMulti+"x";
+        document.getElementById("camMulti").innerHTML = camMulti;
         updateEarning();
         updateClickEarning();
     }
 }
 
 let milaniCost = 50;
-let milanimulti = 1;
+let milanimulti = 0;
 
 document.getElementById('bMilani').onclick = function buyMilani(){
     if(counter >= milaniCost){
@@ -55,7 +53,7 @@ document.getElementById('bMilani').onclick = function buyMilani(){
         milaniCost = Math.round(camCost * 1.5);
         document.getElementById("counter").innerHTML = counter+"$";
         document.getElementById("milaniCost").innerHTML = milaniCost+"$";
-        document.getElementById("milaniMulti").innerHTML = milanimulti+"x";
+        document.getElementById("milaniMulti").innerHTML = milanimulti;
         updateEarning();
         updateClickEarning();
     }
@@ -137,17 +135,17 @@ function updateEarning(){
     document.getElementById("earn").innerHTML = earnPerSec+"$";
 };
 
-let earnPerClick = 1;
 
 function updateClickEarning(){
     /* Updating the earnPerClick variable and updating the earnPerClick on the page. */
-    earnPerClick = apMulti + camMulti * 10 + milaniMulti * 100;
-    document.getElementById("multi").innerHTML = earnPerClick+"$";
+    clickEarning = apMulti + camMulti + milanimulti;
+    document.getElementById("multi").innerHTML = clickEarning+"$";
 }
 
 //@note savegame
 /* Saving the game. */
-document.getElementById("saveGame").onclick = function gameSaved() {
+document.getElementById("saveGame").onclick = gameSaved();
+function gameSaved() {
     console.log("Game Saved");
     let gameSave = {
         counter: counter,
@@ -157,14 +155,20 @@ document.getElementById("saveGame").onclick = function gameSaved() {
         lawyerCost: lawyerCost,
         lawyers: lawyers,
         elonCost: elonCost,
-        elon: elon
+        elon: elon,
+        apCost: apCost,
+        apMulti: apMulti,
+        camCost: camCost,
+        camMulti: camMulti,
+        milaniCost: milaniCost,
+        milanimulti: milanimulti
     }
     localStorage.setItem("gameSave", JSON.stringify(gameSave));
 };
 
 //@note autoSave
 /* Saving the game every 30 seconds. */
-setInterval (function() {
+setInterval (()=> {
     gameSaved();
 }, 30000); // 30000ms = 30s
 
@@ -182,6 +186,12 @@ function loadGame(){
         lawyers = gameSave.lawyers;
         elonCost = gameSave.elonCost;
         elon = gameSave.elon;
+        apCost = gameSave.apCost;
+        apMulti = gameSave.apMulti;
+        camCost = gameSave.camCost;
+        camMulti = gameSave.camMulti;
+        milaniCost = gameSave.milaniCost;
+        milanimulti = gameSave.milanimulti;
     }
 };
 
