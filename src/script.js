@@ -293,6 +293,12 @@ function gameSaved() {
         milaniCost: milaniCost,
         milanimulti: milanimulti,
         clickEarning: clickEarning,
+        apCost: apCost,
+        apMulti: apMulti,
+        handCost: handCost,
+        handMulti: handMulti,
+        milaniCost: milaniCost,
+        milanimulti: milanimulti,
 
     }
     localStorage.setItem("gameSave", JSON.stringify(gameSave));
@@ -325,6 +331,12 @@ function loadGame(){
         milaniCost = gameSave.milaniCost;
         milanimulti = gameSave.milanimulti;
         clickEarning = gameSave.clickEarning;
+        apCost = gameSave.apCost;
+        apMulti = gameSave.apMulti;
+        handCost = gameSave.handCost;
+        handMulti = gameSave.handMulti;
+        milaniCost = gameSave.milaniCost;
+        milanimulti = gameSave.milanimulti;
     }
 };
 
