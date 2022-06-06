@@ -73,19 +73,24 @@ let rumBought = false;
 document.getElementById('bRum').onclick = function buyRum(){
     console.log('clicked');
     if(rumBought === false){
-        if(counter >= rumCost){
-            counter -= rumCost;
-            clickEarning *= 2;
-            document.getElementById("counter").innerHTML = counter+"$";
-            document.getElementById("rumCost").innerHTML = "Bought";
+        alert('Rum Diary will permanently double your click earning!');
+        if(confirm('Are you sure you want to buy Rum Diary?')){
+            if(counter >= rumCost){
+                counter -= rumCost;
+                clickEarning *= 2;
+                document.getElementById("counter").innerHTML = counter+"$";
+                document.getElementById("rumCost").innerHTML = "Bought";
+                rumBought = true;
+                updateClickEarning();
+                alert('You have bought Rum Diary! Your earning per click is now doubled!');
+            }
+            } 
+        } else {
             rumBought = true;
-            updateClickEarning();
+            document.getElementById("bRum").classList.add('pointer-events-none', 'cursor-not-allowed');
+            alert('Already bought');
         }
-    } else {
-        rumBought = true;
-        console.log('already bought');
-    }
-};
+    };
 
 let aquaCost = 50;
 let aquaBought = false;
@@ -281,7 +286,9 @@ function gameSaved() {
         camCost: camCost,
         camMulti: camMulti,
         milaniCost: milaniCost,
-        milanimulti: milanimulti
+        milanimulti: milanimulti,
+        clickEarning: clickEarning,
+
     }
     localStorage.setItem("gameSave", JSON.stringify(gameSave));
 };
@@ -312,6 +319,7 @@ function loadGame(){
         camMulti = gameSave.camMulti;
         milaniCost = gameSave.milaniCost;
         milanimulti = gameSave.milanimulti;
+        clickEarning = gameSave.clickEarning;
     }
 };
 
