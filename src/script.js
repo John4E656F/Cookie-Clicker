@@ -84,13 +84,14 @@ document.getElementById('bRum').onclick = function buyRum(){
                 updateClickEarning();
                 alert('You have bought Rum Diary! Your earning per click is now doubled!');
             }
-            } 
-        } else {
-            rumBought = true;
-            document.getElementById("bRum").classList.add('pointer-events-none', 'cursor-not-allowed');
-            alert('Already bought');
-        }
-    };
+        } 
+    } else {
+        rumBought = true;
+        document.getElementById("bRum").classList.add('pointer-events-none', 'cursor-not-allowed');
+        alert('Already bought');
+    }
+};
+
 
 let aquaCost = 50;
 let aquaBought = false;
@@ -98,17 +99,21 @@ let aquaBought = false;
 document.getElementById('bAqua').onclick = function buyAqua(){
     console.log('clicked');
     if(aquaBought === false){
-        if(counter >= aquaCost){
-            counter -= aquaCost;
-            clickEarning *= 2;
-            document.getElementById("counter").innerHTML = counter+"$";
-            document.getElementById("aquaCost").innerHTML = "Bought";
-            aquaBought = true;
-            updateClickEarning();
+        alert('Rum Diary will permanently double your click earning!');
+        if(confirm('Are you sure you want to buy Rum Diary?')){
+            if(counter >= aquaCost){
+                counter -= aquaCost;
+                clickEarning *= 2;
+                document.getElementById("counter").innerHTML = counter+"$";
+                document.getElementById("aquaCost").innerHTML = "Bought";
+                aquaBought = true;
+                updateClickEarning();
+            }
         }
     } else {
         aquaBought = true;
-        console.log('already bought');
+        document.getElementById("bAqua").classList.add('pointer-events-none', 'cursor-not-allowed');
+        alert('Already bought');
     }
 };
 
