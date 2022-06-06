@@ -8,6 +8,126 @@ document.getElementById("amberHeard").addEventListener('click', ()=> {
     document.getElementById("counter").innerHTML = counter+"$";
 });
 
+const helperList = document.getElementById("helperList");
+const shopList = document.getElementById("shopList");
+const upgradeList = document.getElementById("upgradeList");
+
+//@note helperBtn
+document.getElementById("helper").addEventListener('click', ()=> {
+
+ /* Checking if the helperList has the class hidden. If it does, it will remove the class hidden from
+ the helperList. If the shopList and upgradeList do not have the class hidden, it will add the class
+ hidden to the shopList and upgradeList. If the helperList does not have the class hidden, it will
+ add the class hidden to the helperList. */
+ if (helperList.classList.contains('hidden')) {
+     helperList.classList.remove('hidden');
+     if(shopList.querySelector('hidden') !== 'hidden' && upgradeList.querySelector('hidden') !== 'hidden'){
+         shopList.classList.add('hidden');
+         upgradeList.classList.add('hidden');
+     };
+ } else {
+     helperList.classList.add('hidden');
+ }
+
+});
+
+//@note shopBtn
+document.getElementById("shop").addEventListener('click', ()=> {
+
+    /* Checking if the shopList has the class hidden. If it does, it will remove the class hidden from
+    the shopList. If the helperList and upgradeList do not have the class hidden, it will add the
+    class hidden to the helperList and upgradeList. If the shopList does not have the class hidden,
+    it will add the class hidden to the shopList. */
+    if (shopList.classList.contains('hidden')) {
+        shopList.classList.remove('hidden');
+        if(helperList.querySelector('hidden') !== 'hidden' && upgradeList.querySelector('hidden') !== 'hidden'){
+            helperList.classList.add('hidden');
+            upgradeList.classList.add('hidden');
+        };
+    } else {
+        shopList.classList.add('hidden');
+    }
+});
+
+//@note upgradeBtn
+document.getElementById("upgrade").addEventListener('click', ()=> {
+
+    /* Checking if the upgradeList has the class hidden. If it does, it will remove the class hidden
+    from the upgradeList. If the shopList and helperList do not have the class hidden, it will add
+    the class hidden to the shopList and helperList. If the upgradeList does not have the class
+    hidden, it will add the class hidden to the upgradeList. */
+    if (upgradeList.classList.contains('hidden')) {
+        upgradeList.classList.remove('hidden');
+        if(shopList.querySelector('hidden') !== 'hidden' && shopList.querySelector('hidden') !== 'hidden'){
+            shopList.classList.add('hidden');
+            shopList.classList.add('hidden');
+        };
+    } else {
+        upgradeList.classList.add('hidden');
+    }
+});
+
+let rumCost = 50;
+let rumBought = false;
+
+document.getElementById('bRum').onclick = function buyRum(){
+    console.log('clicked');
+    if(rumBought === false){
+        if(counter >= rumCost){
+            counter -= rumCost;
+            clickEarning *= 2;
+            document.getElementById("counter").innerHTML = counter+"$";
+            document.getElementById("rumCost").innerHTML = "Bought";
+            rumBought = true;
+            updateClickEarning();
+        }
+    } else {
+        rumBought = true;
+        console.log('already bought');
+    }
+};
+
+let aquaCost = 50;
+let aquaBought = false;
+
+document.getElementById('bAqua').onclick = function buyAqua(){
+    console.log('clicked');
+    if(aquaBought === false){
+        if(counter >= aquaCost){
+            counter -= aquaCost;
+            clickEarning *= 2;
+            document.getElementById("counter").innerHTML = counter+"$";
+            document.getElementById("aquaCost").innerHTML = "Bought";
+            aquaBought = true;
+            updateClickEarning();
+        }
+    } else {
+        aquaBought = true;
+        console.log('already bought');
+    }
+};
+
+// let aquaCost = 50;
+// let aquaBought = false;
+
+// document.getElementById('bAqua').onclick = function buyAqua(){
+//     console.log('clicked');
+//     if(aquaBought === false){
+//         if(counter >= aquaCost){
+//             counter -= aquaCost;
+//             clickEarning *= 2;
+//             document.getElementById("counter").innerHTML = counter+"$";
+//             document.getElementById("aquaCost").innerHTML = "Bought";
+//             aquaBought = true;
+//             updateClickEarning();
+//         }
+//     } else {
+//         aquaBought = true;
+//         console.log('already bought');
+//     }
+// };
+
+//@note shop
 let apCost = 50;
 let apMulti = 0;
 
@@ -226,61 +346,3 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-const helperList = document.getElementById("helperList");
-const shopList = document.getElementById("shopList");
-const upgradeList = document.getElementById("upgradeList");
-
-//@note helperBtn
-document.getElementById("helper").addEventListener('click', ()=> {
-
- /* Checking if the helperList has the class hidden. If it does, it will remove the class hidden from
- the helperList. If the shopList and upgradeList do not have the class hidden, it will add the class
- hidden to the shopList and upgradeList. If the helperList does not have the class hidden, it will
- add the class hidden to the helperList. */
- if (helperList.classList.contains('hidden')) {
-     helperList.classList.remove('hidden');
-     if(shopList.querySelector('hidden') !== 'hidden' && upgradeList.querySelector('hidden') !== 'hidden'){
-         shopList.classList.add('hidden');
-         upgradeList.classList.add('hidden');
-     };
- } else {
-     helperList.classList.add('hidden');
- }
-
-});
-
-//@note shopBtn
-document.getElementById("shop").addEventListener('click', ()=> {
-
-    /* Checking if the shopList has the class hidden. If it does, it will remove the class hidden from
-    the shopList. If the helperList and upgradeList do not have the class hidden, it will add the
-    class hidden to the helperList and upgradeList. If the shopList does not have the class hidden,
-    it will add the class hidden to the shopList. */
-    if (shopList.classList.contains('hidden')) {
-        shopList.classList.remove('hidden');
-        if(helperList.querySelector('hidden') !== 'hidden' && upgradeList.querySelector('hidden') !== 'hidden'){
-            helperList.classList.add('hidden');
-            upgradeList.classList.add('hidden');
-        };
-    } else {
-        shopList.classList.add('hidden');
-    }
-});
-
-//@note upgradeBtn
-document.getElementById("upgrade").addEventListener('click', ()=> {
-
-    /* Checking if the upgradeList has the class hidden. If it does, it will remove the class hidden
-    from the upgradeList. If the shopList and helperList do not have the class hidden, it will add
-    the class hidden to the shopList and helperList. If the upgradeList does not have the class
-    hidden, it will add the class hidden to the upgradeList. */
-    if (upgradeList.classList.contains('hidden')) {
-        upgradeList.classList.remove('hidden');
-        if(shopList.querySelector('hidden') !== 'hidden' && shopList.querySelector('hidden') !== 'hidden'){
-            shopList.classList.add('hidden');
-            shopList.classList.add('hidden');
-        };
-    } else {
-        upgradeList.classList.add('hidden');
-    }
-});
