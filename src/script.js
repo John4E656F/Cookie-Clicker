@@ -155,18 +155,18 @@ document.getElementById('bAP').onclick = function buyAP(){
     }
 }
 
-let camCost = 50;
-let camMulti = 0;
+let handCost = 50;
+let handMulti = 0;
 
-document.getElementById('bCam').onclick = function buyCam(){
-    if(counter >= camCost){
-        counter -= camCost;
-        clickEarning *= camMulti;
-        camMulti += 10;
-        camCost = Math.round(camCost * 1.5);
+document.getElementById('bHand').onclick = function buyHand(){
+    if(counter >= handCost){
+        counter -= handCost;
+        clickEarning *= chandulti;
+        handMulti += 10;
+        handCost = Math.round(handCost * 1.5);
         document.getElementById("counter").innerHTML = counter+"$";
-        document.getElementById("camCost").innerHTML = camCost+"$";
-        document.getElementById("camMulti").innerHTML = camMulti;
+        document.getElementById("handCost").innerHTML = handCost+"$";
+        document.getElementById("handMulti").innerHTML = handMulti;
         updateEarning();
         updateClickEarning();
     }
@@ -180,7 +180,7 @@ document.getElementById('bMilani').onclick = function buyMilani(){
         counter -= milaniCost;
         clickEarning *= milaniMulti;
         milanimulti += 100;
-        milaniCost = Math.round(camCost * 1.5);
+        milaniCost = Math.round(milaniCost * 1.5);
         document.getElementById("counter").innerHTML = counter+"$";
         document.getElementById("milaniCost").innerHTML = milaniCost+"$";
         document.getElementById("milaniMulti").innerHTML = milanimulti;
@@ -268,7 +268,7 @@ function updateEarning(){
 
 function updateClickEarning(){
     /* Updating the earnPerClick variable and updating the earnPerClick on the page. */
-    clickEarning = apMulti + camMulti + milanimulti;
+    clickEarning = apMulti + handMulti + milanimulti;
     document.getElementById("multi").innerHTML = clickEarning+"$";
 }
 
@@ -288,8 +288,8 @@ function gameSaved() {
         elon: elon,
         apCost: apCost,
         apMulti: apMulti,
-        camCost: camCost,
-        camMulti: camMulti,
+        handCost: handCost,
+        handMulti: handMulti,
         milaniCost: milaniCost,
         milanimulti: milanimulti,
         clickEarning: clickEarning,
@@ -320,8 +320,8 @@ function loadGame(){
         elon = gameSave.elon;
         apCost = gameSave.apCost;
         apMulti = gameSave.apMulti;
-        camCost = gameSave.camCost;
-        camMulti = gameSave.camMulti;
+        handCost = gameSave.handCost;
+        handMulti = gameSave.handMulti;
         milaniCost = gameSave.milaniCost;
         milanimulti = gameSave.milanimulti;
         clickEarning = gameSave.clickEarning;
