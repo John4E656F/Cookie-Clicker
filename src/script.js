@@ -1,4 +1,4 @@
-let counter = 100000;
+let counter = 0;
 let clickEarning = 1;
 
 /* Adding an event listener to the element with the id "amberHeard" and when the element is clicked, it
