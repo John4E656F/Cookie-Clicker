@@ -153,7 +153,6 @@ document.getElementById('bAP').onclick = function buyAP(){
         document.getElementById("counter").innerHTML = counter+"$";
         document.getElementById("apCost").innerHTML = apCost+"$";
         document.getElementById("apMulti").innerHTML = apMulti;
-        updateEarning();
         updateClickEarning();
     }
 }
@@ -170,7 +169,6 @@ document.getElementById('bHand').onclick = function buyHand(){
         document.getElementById("counter").innerHTML = counter+"$";
         document.getElementById("handCost").innerHTML = handCost+"$";
         document.getElementById("handMulti").innerHTML = handMulti;
-        updateEarning();
         updateClickEarning();
     }
 }
@@ -181,13 +179,12 @@ let milanimulti = 0;
 document.getElementById('bMilani').onclick = function buyMilani(){
     if(counter >= milaniCost){
         counter -= milaniCost;
-        clickEarning *= milaniMulti;
+        clickEarning *= milanimulti;
         milanimulti += 100;
         milaniCost = Math.round(milaniCost * 1.5);
         document.getElementById("counter").innerHTML = counter+"$";
         document.getElementById("milaniCost").innerHTML = milaniCost+"$";
         document.getElementById("milaniMulti").innerHTML = milanimulti;
-        updateEarning();
         updateClickEarning();
     }
 }
@@ -271,9 +268,9 @@ function updateEarning(){
 
 function updateClickEarning(){
     /* Updating the earnPerClick variable and updating the earnPerClick on the page. */
-    clickEarning = apMulti + handMulti + milanimulti;
+    clickEarning = apMulti + handMulti * 5 + milanimulti * 10;
     document.getElementById("multi").innerHTML = clickEarning+"$";
-}
+};
 
 //@note savegame
 /* Saving the game. */
