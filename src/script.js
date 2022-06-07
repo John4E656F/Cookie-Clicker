@@ -143,6 +143,7 @@ document.getElementById('bMera').onclick = function buyMera(){
 //@note shop
 let apCost = 50;
 let apMulti = 0;
+let apBought = false;
 
 document.getElementById('bAP').onclick = function buyAP(){
     if(counter >= apCost){
@@ -159,6 +160,7 @@ document.getElementById('bAP').onclick = function buyAP(){
 
 let handCost = 50;
 let handMulti = 0;
+let handBought = false;
 
 document.getElementById('bHand').onclick = function buyHand(){
     if(counter >= handCost){
@@ -175,6 +177,7 @@ document.getElementById('bHand').onclick = function buyHand(){
 
 let milaniCost = 50;
 let milanimulti = 0;
+let milaniBought = false;
 
 document.getElementById('bMilani').onclick = function buyMilani(){
     if(counter >= milaniCost){
@@ -268,7 +271,15 @@ function updateEarning(){
 
 function updateClickEarning(){
     /* Updating the earnPerClick variable and updating the earnPerClick on the page. */
-    clickEarning = apMulti + handMulti * 5 + milanimulti * 10;
+    
+    if(apBought == false || handBought == false || milaniBought == false){
+        apBought = true;
+        handBought = true;
+        milaniBought = true;
+        clickEarning = 1;
+    } else {
+        clickEarning = apMulti + handMulti * 5 + milanimulti * 10;
+    }
     document.getElementById("multi").innerHTML = clickEarning+"$";
 };
 
