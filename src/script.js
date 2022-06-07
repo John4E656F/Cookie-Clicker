@@ -8,6 +8,190 @@ document.getElementById("amberHeard").addEventListener('click', ()=> {
     document.getElementById("counter").innerHTML = counter+"$";
 });
 
+const helperList = document.getElementById("helperList");
+const shopList = document.getElementById("shopList");
+const upgradeList = document.getElementById("upgradeList");
+
+//@note helperBtn
+document.getElementById("helper").addEventListener('click', ()=> {
+
+ /* Checking if the helperList has the class hidden. If it does, it will remove the class hidden from
+ the helperList. If the shopList and upgradeList do not have the class hidden, it will add the class
+ hidden to the shopList and upgradeList. If the helperList does not have the class hidden, it will
+ add the class hidden to the helperList. */
+ if (helperList.classList.contains('hidden')) {
+     helperList.classList.remove('hidden');
+     if(shopList.querySelector('hidden') !== 'hidden' && upgradeList.querySelector('hidden') !== 'hidden'){
+         shopList.classList.add('hidden');
+         upgradeList.classList.add('hidden');
+     };
+ } else {
+     helperList.classList.add('hidden');
+ }
+
+});
+
+//@note shopBtn
+document.getElementById("shop").addEventListener('click', ()=> {
+
+    /* Checking if the shopList has the class hidden. If it does, it will remove the class hidden from
+    the shopList. If the helperList and upgradeList do not have the class hidden, it will add the
+    class hidden to the helperList and upgradeList. If the shopList does not have the class hidden,
+    it will add the class hidden to the shopList. */
+    if (shopList.classList.contains('hidden')) {
+        shopList.classList.remove('hidden');
+        if(helperList.querySelector('hidden') !== 'hidden' && upgradeList.querySelector('hidden') !== 'hidden'){
+            helperList.classList.add('hidden');
+            upgradeList.classList.add('hidden');
+        };
+    } else {
+        shopList.classList.add('hidden');
+    }
+});
+
+//@note upgradeBtn
+document.getElementById("upgrade").addEventListener('click', ()=> {
+
+    /* Checking if the upgradeList has the class hidden. If it does, it will remove the class hidden
+    from the upgradeList. If the shopList and helperList do not have the class hidden, it will add
+    the class hidden to the shopList and helperList. If the upgradeList does not have the class
+    hidden, it will add the class hidden to the upgradeList. */
+    if (upgradeList.classList.contains('hidden')) {
+        upgradeList.classList.remove('hidden');
+        if(shopList.querySelector('hidden') !== 'hidden' && shopList.querySelector('hidden') !== 'hidden'){
+            shopList.classList.add('hidden');
+            helperList.classList.add('hidden');
+        };
+    } else {
+        upgradeList.classList.add('hidden');
+    }
+});
+
+let rumCost = 50;
+let rumBought = false;
+
+document.getElementById('bRum').onclick = function buyRum(){
+    console.log('clicked');
+    if(rumBought === false){
+        alert('Rum Diary will permanently double your click earning!');
+        if(confirm('Are you sure you want to buy Rum Diary?')){
+            if(counter >= rumCost){
+                counter -= rumCost;
+                clickEarning *= 2;
+                document.getElementById("counter").innerHTML = counter+"$";
+                document.getElementById("rumCost").innerHTML = "Bought";
+                rumBought = true;
+                updateClickEarning();
+                alert('You have bought Rum Diary! Your earning per click is now doubled!');
+            }
+        } 
+    } else {
+        rumBought = true;
+        document.getElementById("bRum").classList.add('pointer-events-none', 'cursor-not-allowed');
+        alert('Already bought');
+    }
+};
+
+
+let aquaCost = 50;
+let aquaBought = false;
+
+document.getElementById('bAqua').onclick = function buyAqua(){
+    console.log('clicked');
+    if(aquaBought === false){
+        alert('Rum Diary will permanently double your click earning!');
+        if(confirm('Are you sure you want to buy Rum Diary?')){
+            if(counter >= aquaCost){
+                counter -= aquaCost;
+                earnPerSec *= 2;
+                document.getElementById("counter").innerHTML = counter+"$";
+                document.getElementById("aquaCost").innerHTML = "Bought";
+                aquaBought = true;
+                updateClickEarning();
+            }
+        }
+    } else {
+        aquaBought = true;
+        document.getElementById("bAqua").classList.add('pointer-events-none', 'cursor-not-allowed');
+        alert('Already bought');
+    }
+};
+
+let meraCost = 1000000000;
+let meraBought = false;
+
+document.getElementById('bMera').onclick = function buyMera(){
+    console.log('clicked');
+    if(meraBought === false){
+        alert('Rum Diary will permanently double your click earning!');
+        if(confirm('Are you sure you want to buy Rum Diary?')){
+            if(counter >= meraCost){
+                counter -= meraCost;
+                clickEarning *= 2;
+                document.getElementById("counter").innerHTML = counter+"$";
+                document.getElementById("meraCost").innerHTML = "Bought";
+                meraBought = true;
+            }
+        }
+    } else {
+        aquaBought = true;
+        document.getElementById("bMera").classList.add('pointer-events-none', 'cursor-not-allowed');
+        alert('Already bought');
+    }
+};
+
+//@note shop
+let apCost = 50;
+let apMulti = 0;
+
+document.getElementById('bAP').onclick = function buyAP(){
+    if(counter >= apCost){
+        counter -= apCost;
+        clickEarning *= apMulti;
+        apMulti += 1;
+        apCost = Math.round(apCost * 1.5);
+        document.getElementById("counter").innerHTML = counter+"$";
+        document.getElementById("apCost").innerHTML = apCost+"$";
+        document.getElementById("apMulti").innerHTML = apMulti;
+        updateEarning();
+        updateClickEarning();
+    }
+}
+
+let handCost = 50;
+let handMulti = 0;
+
+document.getElementById('bHand').onclick = function buyHand(){
+    if(counter >= handCost){
+        counter -= handCost;
+        clickEarning *= handMulti;
+        handMulti += 10;
+        handCost = Math.round(handCost * 1.5);
+        document.getElementById("counter").innerHTML = counter+"$";
+        document.getElementById("handCost").innerHTML = handCost+"$";
+        document.getElementById("handMulti").innerHTML = handMulti;
+        updateEarning();
+        updateClickEarning();
+    }
+}
+
+let milaniCost = 50;
+let milanimulti = 0;
+
+document.getElementById('bMilani').onclick = function buyMilani(){
+    if(counter >= milaniCost){
+        counter -= milaniCost;
+        clickEarning *= milaniMulti;
+        milanimulti += 100;
+        milaniCost = Math.round(milaniCost * 1.5);
+        document.getElementById("counter").innerHTML = counter+"$";
+        document.getElementById("milaniCost").innerHTML = milaniCost+"$";
+        document.getElementById("milaniMulti").innerHTML = milanimulti;
+        updateEarning();
+        updateClickEarning();
+    }
+}
+
 let jamesCost = 30;
 let james = 0;
 
@@ -84,9 +268,16 @@ function updateEarning(){
     document.getElementById("earn").innerHTML = earnPerSec+"$";
 };
 
+
+function updateClickEarning(){
+    /* Updating the earnPerClick variable and updating the earnPerClick on the page. */
+    clickEarning = apMulti + handMulti + milanimulti;
+    document.getElementById("multi").innerHTML = clickEarning+"$";
+}
+
 //@note savegame
 /* Saving the game. */
-document.getElementById("saveGame").onclick = function gameSaved() {
+let saveGame = document.getElementById("saveGame").onclick = function gameSaved() {
     console.log("Game Saved");
     let gameSave = {
         counter: counter,
@@ -96,14 +287,28 @@ document.getElementById("saveGame").onclick = function gameSaved() {
         lawyerCost: lawyerCost,
         lawyers: lawyers,
         elonCost: elonCost,
-        elon: elon
+        elon: elon,
+        apCost: apCost,
+        apMulti: apMulti,
+        handCost: handCost,
+        handMulti: handMulti,
+        milaniCost: milaniCost,
+        milanimulti: milanimulti,
+        clickEarning: clickEarning,
+        apCost: apCost,
+        apMulti: apMulti,
+        handCost: handCost,
+        handMulti: handMulti,
+        milaniCost: milaniCost,
+        milanimulti: milanimulti,
+
     }
     localStorage.setItem("gameSave", JSON.stringify(gameSave));
 };
 
 //@note autoSave
 /* Saving the game every 30 seconds. */
-setInterval (function() {
+setInterval (()=> {
     gameSaved();
 }, 30000); // 30000ms = 30s
 
@@ -121,6 +326,19 @@ function loadGame(){
         lawyers = gameSave.lawyers;
         elonCost = gameSave.elonCost;
         elon = gameSave.elon;
+        apCost = gameSave.apCost;
+        apMulti = gameSave.apMulti;
+        handCost = gameSave.handCost;
+        handMulti = gameSave.handMulti;
+        milaniCost = gameSave.milaniCost;
+        milanimulti = gameSave.milanimulti;
+        clickEarning = gameSave.clickEarning;
+        apCost = gameSave.apCost;
+        apMulti = gameSave.apMulti;
+        handCost = gameSave.handCost;
+        handMulti = gameSave.handMulti;
+        milaniCost = gameSave.milaniCost;
+        milanimulti = gameSave.milanimulti;
     }
 };
 
@@ -144,6 +362,13 @@ window.onload = function () {
     document.getElementById("james").innerHTML = james;
     document.getElementById("elonCost").innerHTML = elonCost+"$";
     document.getElementById("elon").innerHTML = elon;
+    document.getElementById("apCost").innerHTML = apCost+"$";
+    document.getElementById("apMulti").innerHTML = apMulti+"$";
+    document.getElementById("handCost").innerHTML = handCost+"$";
+    document.getElementById("handMulti").innerHTML = handMulti+"$";
+    document.getElementById("milaniCost").innerHTML = milaniCost+"$";
+    document.getElementById("milaniMulti").innerHTML = milanimulti+"$";
+    document.getElementById("multi").innerHTML = clickEarning+"$";
 };
 
 //@note Ctrl + S save
@@ -155,61 +380,3 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-const helperList = document.getElementById("helperList");
-const shopList = document.getElementById("shopList");
-const upgradeList = document.getElementById("upgradeList");
-
-//@note helperBtn
-document.getElementById("helper").addEventListener('click', ()=> {
-
- /* Checking if the helperList has the class hidden. If it does, it will remove the class hidden from
- the helperList. If the shopList and upgradeList do not have the class hidden, it will add the class
- hidden to the shopList and upgradeList. If the helperList does not have the class hidden, it will
- add the class hidden to the helperList. */
- if (helperList.classList.contains('hidden')) {
-     helperList.classList.remove('hidden');
-     if(shopList.querySelector('hidden') !== 'hidden' && upgradeList.querySelector('hidden') !== 'hidden'){
-         shopList.classList.add('hidden');
-         upgradeList.classList.add('hidden');
-     };
- } else {
-     helperList.classList.add('hidden');
- }
-
-});
-
-//@note shopBtn
-document.getElementById("shop").addEventListener('click', ()=> {
-
-    /* Checking if the shopList has the class hidden. If it does, it will remove the class hidden from
-    the shopList. If the helperList and upgradeList do not have the class hidden, it will add the
-    class hidden to the helperList and upgradeList. If the shopList does not have the class hidden,
-    it will add the class hidden to the shopList. */
-    if (shopList.classList.contains('hidden')) {
-        shopList.classList.remove('hidden');
-        if(helperList.querySelector('hidden') !== 'hidden' && upgradeList.querySelector('hidden') !== 'hidden'){
-            helperList.classList.add('hidden');
-            upgradeList.classList.add('hidden');
-        };
-    } else {
-        shopList.classList.add('hidden');
-    }
-});
-
-//@note upgradeBtn
-document.getElementById("upgrade").addEventListener('click', ()=> {
-
-    /* Checking if the upgradeList has the class hidden. If it does, it will remove the class hidden
-    from the upgradeList. If the shopList and helperList do not have the class hidden, it will add
-    the class hidden to the shopList and helperList. If the upgradeList does not have the class
-    hidden, it will add the class hidden to the upgradeList. */
-    if (upgradeList.classList.contains('hidden')) {
-        upgradeList.classList.remove('hidden');
-        if(shopList.querySelector('hidden') !== 'hidden' && shopList.querySelector('hidden') !== 'hidden'){
-            shopList.classList.add('hidden');
-            shopList.classList.add('hidden');
-        };
-    } else {
-        upgradeList.classList.add('hidden');
-    }
-});

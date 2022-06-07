@@ -11,78 +11,95 @@
 
 
 
-  <body class="container select-none h-screen max-w-full bg-stone-900 font-bold">
 
-    <div class=" mx-auto m-4 w-96 text-center overflow-hidden rounded-2xl bg-amber-600/100 text-white shadow-xl shadow-amber-600/40 ">
-      <button onclick="gameSaved()" id="saveGame" class="m-2 p-3 rounded-full bg-amber-800/25 font-bold">Save Game</button>
-      <button onclick="resetGame()" id="resetGame" class="m-2 p-3 rounded-full bg-amber-800/25 font-bold">Reset Game</button>
-    </div>
+<body class="container select-none h-screen max-w-full bg-stone-900 font-bold">
 
-    <div class="m-auto  my-14 w-96 max-w-lg items-center justify-center overflow-hidden rounded-2xl bg-amber-600 shadow-xl shadow-amber-600/40">
-      <blockquote>
-        <p class=" text-center text-base text-amber-100 font-bold mt-5">Help <em>Amber Heard</em> get 15million$</p>
-      </blockquote>
-      <div class="mt-3 mb-3 px-3 text-center text-lg text-amber-200 " id="counter">0$</div>
-      <div class="w-44 m-auto p-1 rounded-tl-lg rounded-tr-lg  bg-orange-800/75 ">
+
+  <div
+    class="mx-auto m-2  w-96 text-center overflow-hidden rounded-2xl bg-amber-600/100 text-white shadow-xl shadow-amber-600/40">
+    <button onclick="gameSaved()" id="saveGame" class="m-2 p-3 rounded-full bg-amber-800/25 font-bold">Save
+      Game</button>
+    <button onclick="resetGame()" id="resetGame" class="m-2 p-3 rounded-full bg-amber-800/25 font-bold">Reset
+      Game</button>
+  </div>
+
+
+  <div
+    class="m-auto  my-14 w-96 max-w-lg items-center justify-center overflow-hidden rounded-2xl shadow-xl shadow-amber-600/40  bg-amber-600">
+
+    <blockquote>
+      <p class="mx-2 mb-7 text-center text-base text-amber-100 font-bold mt-5">Help <em>Amber Heard</em> get
+        15million$</p>
+    </blockquote>
+
+    <div class="mt-5 mb-1 px-3 text-center text-lg text-amber-200" id="counter">0$</div>
+    <div class="w-44 m-auto p-1 rounded-tl-lg rounded-tr-lg  bg-orange-800/75">
       <div class="mt-5 px-3 text-center text-orange-100"><span id="multi">1$</span> Earnings/click</div>
       <div class="mb-5 px-3 text-center text-orange-100"><span id="earn">0$</span> Earnings/sec</div>
-      </div>
-      
-      <div class="flex justify-center pb-6 mb-6 border-x-4 border-b-4 border-orange-800/75 rounded-b-lg w-44 m-auto mb-3 shadow-lg shadow-zinc-800">
-        <img class="h-32 rounded-full" id="amberHeard" src="/src/assets/Ah-nbg.png" />
-      </div>
-   
     </div>
 
-    <div class="container mx-auto p4 w-96  overflow-hidden rounded-2xl shadow-xl bg-amber-600/100 text-white shadow-xl shadow-amber-600/40" >
-      <div class="flex flex-row p-4 gap-5 justify-center">
-        <div class="flex-none rounded-2xl p-2 px-4 bg-amber-800/25" id="upgrade">Upgrade</div>
-        <div class="flex-none rounded-2xl p-2 px-4 bg-amber-800/25" id="shop">Shop</div>
-        <div class="flex-none rounded-2xl p-2 px-4 bg-amber-800/25" id="helper">Helper</div>
-      </div>
+    <div
+      class="flex justify-center pb-6 mb-6 border-x-4 border-b-4 border-orange-800/75 rounded-b-lg w-44 m-auto mb-3 shadow-lg shadow-zinc-800">
+      <img class="h-32 rounded-full" id="amberHeard" src="/src/assets/Ah-nbg.png" />
+    </div>
+
+  </div>
+
+  <div
+    class="container mx-auto p4 w-96 overflow-hidden rounded-2xl bg-amber-600/100 text-white shadow-xl shadow-amber-600/40">
+    <div class="flex flex-row p-4 gap-5 justify-center">
+      <div class="flex-none rounded-2xl p-2 px-4 px-4 bg-amber-800/25" id="upgrade">Upgrade</div>
+      <div class="flex-none rounded-2xl p-2 px-4 px-4 bg-amber-800/25" id="shop">Shop</div>
+      <div class="flex-none rounded-2xl p-2 px-4 px-4 bg-amber-800/25" id="helper">Helper</div>
+    </div>
+
+    <!-- @note UpgradeList -->
+    <div class="flex flex-col p-4 gap-5 justify-center hidden" id="upgradeList">
+
+      <table id="bRum"
+        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl shadow-xl bg-amber-800/25 "
+        onclick="buyRum()">
+        <tr>
+          <td id="image"><img src=""></td>
+          <td id="nameAndCost">
+            <p>Rum Diary</p>
+            <p><span id="rumCost">15million$</span></p>
+          </td>
+          <td id="amount"><span id="rum">x2 earn/click</span></td>
+        </tr>
+      </table>
+
+      <table id="bAqua"
+        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+        onclick="buyAqua()">
+        <tr>
+          <td id="image"><img src=""></td>
+          <td id="nameAndCost">
+            <p>Aquaman</p>
+            <p><span id="aquaCost">15million$</span></p>
+          </td>
+          <td id="amount"><span id="aqua">x2 earn/sec</span></td>
+        </tr>
+      </table>
+
+      <table id="bMera"
+        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+        onclick="buyMera()">
+        <tr>
+          <td id="image"><img src=""></td>
+          <td id="nameAndCost">
+            <p>Mera</p>
+            <p><span id="meraCost">1Billions$</span></p>
+          </td>
+          <td id="amount"><span id="mera">Unknown</span></td>
+        </tr>
+      </table>
+
+    </div>
+
 
       <!-- @note UpgradeList -->
-      <div class="flex flex-col p-4 gap-5 justify-center hidden " id="upgradeList">
 
-        <table id="bMera"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
-          onclick="buyMera()">
-          <tr>
-            <td id="image"><img src=""></td>
-            <td id="nameAndCost">
-              <p>Mera</p>
-              <p><span id="meraCost">30$</span></p>
-            </td>
-            <td id="amount"><span id="mera">0</span></td>
-          </tr>
-        </table>
-
-        <table id="bGucci"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl "
-          onclick="buygucci()">
-          <tr>
-            <td id="image"><img src=""></td>
-            <td id="nameAndCost">
-              <p>Gucci</p>
-              <p><span id="gucciCost">30$</span></p>
-            </td>
-            <td id="amount"><span id="gucci">0</span></td>
-          </tr>
-        </table>
-
-        <table id="bCry"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
-          onclick="buyCry()">
-          <tr>
-            <td id="image"><img src=""></td>
-            <td id="nameAndCost">
-              <p>Cry</p>
-              <p><span id="cryCost">30$</span></p>
-            </td>
-            <td id="amount"><span id="cry">0</span></td>
-          </tr>
-        </table>
-      </div>
 
       <!-- @note shopList -->
       <div class="flex flex-col p-4 gap-5 justify-center hidden" id="shopList">
@@ -96,35 +113,38 @@
               <p>Amber Poop</p>
               <p><span id="apCost">30$</span></p>
             </td>
-            <td id="amount"><span id="apMulti">x0</span></td>
+            <td id="amount">Multiplier x<span id="apMulti">0</span></td>
           </tr>
         </table>
 
-        <table id="bCam"
+
+        <table id="bHand"
           class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
-          onclick="buyCam()">
+          onclick="buyHand()">
           <tr>
             <td id="image"><img src=""></td>
             <td id="nameAndCost">
-              <p>Camera</p>
-              <p><span id="camCost">30$</span></p>
+              <p>Hand</p>
+              <p><span id="handCost">30$</span></p>
             </td>
-            <td id="amount"><span id="camMulti">x00</span></td>
+            <td id="amount">Multiplier x<span id="handMulti">0</span></td>
           </tr>
         </table>
 
-        <table id="bCry"
+        <table id="bMilani"
           class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
-          onclick="buyCry()">
+          onclick="buyMilani()">
           <tr>
             <td id="image"><img src=""></td>
             <td id="nameAndCost">
-              <p>Cry</p>
-              <p><span id="cryCost">30$</span></p>
+              <p>Milani</p>
+              <p><span id="milaniCost">30$</span></p>
             </td>
-            <td id="amount"><span id="cry">0</span></td>
+            <td id="amount">Multiplier x<span id="milaniMulti">0</span></td>
           </tr>
         </table>
+
+
       </div>
 
 
@@ -170,26 +190,24 @@
           </tr>
         </table>
 
-        <table id="bJames"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25  shadow-xl"
-          onclick="buyJames()">
-          <tr>
-            <td id="image"><img src=""></td>
-            <td id="nameAndCost">
-              <p>James Franco</p>
-              <p><span id="jamesCost">50$</span></p>
-            </td>
-            <td id="amount"><span id="james">0</span></td>
-          </tr>
-        </table>
+
       </div>
+   
 
 
 
-    </div>
 
-    <!-- oldcode for bonus -->
-    <!-- <div onclick="buyMakeup()" id="bMakeup" class="my-5 mx-auto w-96 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-slate-200 shadow-xl">
+  </div>
+
+
+  <!-- @note helpList -->
+
+
+
+
+
+  <!-- oldcode for bonus -->
+  <!-- <div onclick="buyMakeup()" id="bMakeup" class="my-5 mx-auto w-96 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-slate-200 shadow-xl">
       <button  class="m-5" >Makeup : <span id="makeupCost">30$</span> -- <span id="makeup">0</span></button>
     </div>
     <div onclick="buyLawyer()" id="bLawyer" class="my-5 mx-auto w-96 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-slate-200 shadow-xl">
@@ -200,14 +218,14 @@
     </div>
   </div> -->
 
-    <div
-      class="m-auto  my-28 w-96 max-w-lg items-center justify-center overflow-hidden rounded-2xl bg-slate-200 shadow-xl">
+  <div
+    class="m-auto  my-28 w-96 max-w-lg items-center justify-center overflow-hidden rounded-2xl bg-slate-200 shadow-xl">
 
-    </div>
+  </div>
 
 
 
-    <script type="module" src="./src/script.js"></script>
+  <script type="module" src="./src/script.js"></script>
 </body>
 
 </html>
