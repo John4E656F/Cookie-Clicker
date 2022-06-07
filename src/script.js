@@ -8,6 +8,37 @@ document.getElementById("amberHeard").addEventListener('click', ()=> {
     document.getElementById("counter").innerHTML = counter+"$";
 });
 
+const bonusClickBtn = document.getElementById("bonusClick");
+let bonusBtnClicked = true;
+let bonusClick = 3;
+
+function randomBonus(){
+
+    window.setTimeout( function() {
+    bonusClickBtn.classList.remove("hidden");
+    bonusBtnClicked = true;
+
+    }, Math.floor(Math.random() * 20000 + 1000000));
+};
+
+document.getElementById('bonusClick').addEventListener('click', () =>{
+
+    if (bonusBtnClicked === true){
+        alert('You have activated a bonus! Your click earning is now doubled!');
+        let bonusClickeEarning = clickEarning;
+        bonusClickeEarning *= bonusClick;
+        updateClickEarning();
+        bonusClickBtn.classList.add("hidden");
+        bonusBtnClicked = false;
+        window.setTimeout(function(){
+            bonusClickeEarning /= bonusClick;
+            clickEarning = bonusClickeEarning;
+            updateClickEarning();
+        }, 20000);
+    }
+});
+
+
 const helperList = document.getElementById("helperList");
 const shopList = document.getElementById("shopList");
 const upgradeList = document.getElementById("upgradeList");
@@ -73,22 +104,19 @@ let rumBought = false;
 document.getElementById('bRum').onclick = function buyRum(){
     console.log('clicked');
     if(rumBought === false){
-        alert('Rum Diary will permanently double your click earning!');
+        alert('Rum Diary will permanently double your click earning and will reset the game!');
         if(confirm('Are you sure you want to buy Rum Diary?')){
             if(counter >= rumCost){
                 counter -= rumCost;
-                clickEarning *= 2;
-                document.getElementById("counter").innerHTML = counter+"$";
                 document.getElementById("rumCost").innerHTML = "Bought";
                 rumBought = true;
-                updateClickEarning();
                 alert('You have bought Rum Diary! Your earning per click is now doubled!');
+                rumUnlocked();
             }
         } 
     } else {
         rumBought = true;
         document.getElementById("bRum").classList.add('pointer-events-none', 'cursor-not-allowed');
-        alert('Already bought');
     }
 };
 
@@ -103,11 +131,9 @@ document.getElementById('bAqua').onclick = function buyAqua(){
         if(confirm('Are you sure you want to buy Rum Diary?')){
             if(counter >= aquaCost){
                 counter -= aquaCost;
-                earnPerSec *= 2;
-                document.getElementById("counter").innerHTML = counter+"$";
                 document.getElementById("aquaCost").innerHTML = "Bought";
                 aquaBought = true;
-                updateClickEarning();
+                aquaUnlocked();
             }
         }
     } else {
@@ -139,6 +165,23 @@ document.getElementById('bMera').onclick = function buyMera(){
         alert('Already bought');
     }
 };
+
+function rumUnlocked(){
+    if(rumBought === true){
+        clickEarning *= 2;
+        document.getElementById("multi").innerHTML = clickEarning+"$";
+    }
+}
+
+function aquaUnlocked(){
+    if(aquaBought === true){
+        earnPerSec *= 2;
+        document.getElementById("multi").innerHTML = earnPerSec+"$";
+    }
+}
+
+
+
 
 //@note shop
 let apCost = 50;
@@ -278,9 +321,43 @@ function updateClickEarning(){
         milaniBought = true;
         clickEarning = 1;
     } else {
-        clickEarning = apMulti + handMulti * 5 + milanimulti * 10;
+        clickEarning = apMulti + handMulti * 5 + milanimulti * 10 + bonusClick;
     }
     document.getElementById("multi").innerHTML = clickEarning+"$";
+};
+
+function paidJohnny(){
+    if(counter >= 15000000){
+        alert('You are about to pay Johnny Depp, $15,000,000. This will reset the game with the permanent upgrade unlocked.');
+            counter = 0;
+            james = 0;
+            lawyers = 0;
+            elon = 0;
+            jamesCost = 30;
+            lawyerCost = 500;
+            elonCost = 1000;
+            apCost = 100;
+            handCost = 50;
+            milaniCost = 50;
+            apMulti = 0;
+            handMulti = 0;
+            milanimulti = 0;
+            clickEarning = 1;
+            document.getElementById("counter").innerHTML = counter+"$";
+            document.getElementById("james").innerHTML = james;
+            document.getElementById("lawyers").innerHTML = lawyers;
+            document.getElementById("elon").innerHTML = elon;
+            document.getElementById("jamesCost").innerHTML = jamesCost+"$";
+            document.getElementById("lawyerCost").innerHTML = lawyerCost+"$";
+            document.getElementById("elonCost").innerHTML = elonCost+"$";
+            document.getElementById("apCost").innerHTML = apCost+"$";
+            document.getElementById("handCost").innerHTML = handCost+"$";
+            document.getElementById("milaniCost").innerHTML = milaniCost+"$";
+            document.getElementById("apMulti").innerHTML = apMulti;
+            document.getElementById("handMulti").innerHTML = handMulti;
+            document.getElementById("milaniMulti").innerHTML = milanimulti;
+            document.getElementById("multi").innerHTML = clickEarning+"$";
+    }
 };
 
 //@note savegame
