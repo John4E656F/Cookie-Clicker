@@ -277,7 +277,7 @@ function updateClickEarning(){
 
 //@note savegame
 /* Saving the game. */
-let saveGame = document.getElementById("saveGame").onclick = function gameSaved() {
+document.getElementById("saveGame").onclick = function gameSaved() {
     console.log("Game Saved");
     let gameSave = {
         counter: counter,
@@ -309,8 +309,43 @@ let saveGame = document.getElementById("saveGame").onclick = function gameSaved(
 //@note autoSave
 /* Saving the game every 30 seconds. */
 setInterval (()=> {
-    gameSaved();
+    console.log("Game Auto Saved");
+    let gameSave = {
+        counter: counter,
+        earnPerSec: earnPerSec,
+        jamesCost: jamesCost,
+        james: james,
+        lawyerCost: lawyerCost,
+        lawyers: lawyers,
+        elonCost: elonCost,
+        elon: elon,
+        apCost: apCost,
+        apMulti: apMulti,
+        handCost: handCost,
+        handMulti: handMulti,
+        milaniCost: milaniCost,
+        milanimulti: milanimulti,
+        clickEarning: clickEarning,
+        apCost: apCost,
+        apMulti: apMulti,
+        handCost: handCost,
+        handMulti: handMulti,
+        milaniCost: milaniCost,
+        milanimulti: milanimulti,
+
+    }
+    localStorage.setItem("gameSave", JSON.stringify(gameSave));
 }, 30000); // 30000ms = 30s
+
+//@note Ctrl + S save
+/* Saving the game when the user presses Ctrl + S. */
+document.addEventListener('keydown', function(event) {
+    if(event.ctrlKey && event.keyCode == 83) { // Ctrl + S
+        event.preventDefault();
+        gameSaved();
+    }
+});
+
 
 //@note loadgame
  /* If there is a gameSave in localStorage, then set the variables to the values in the gameSave.
@@ -355,6 +390,7 @@ document.getElementById("resetGame").onclick = function resetGame(){
 window.onload = function () {
     loadGame();
     updateEarning();
+    updateClickEarning();
     document.getElementById("counter").innerHTML = counter+"$";
     document.getElementById("lawyerCost").innerHTML = lawyerCost+"$";
     document.getElementById("lawyers").innerHTML = lawyers;
@@ -370,13 +406,4 @@ window.onload = function () {
     document.getElementById("milaniMulti").innerHTML = milanimulti+"$";
     document.getElementById("multi").innerHTML = clickEarning+"$";
 };
-
-//@note Ctrl + S save
-/* Saving the game when the user presses Ctrl + S. */
-document.addEventListener('keydown', function(event) {
-    if(event.ctrlKey && event.keyCode == 83) { // Ctrl + S
-        event.preventDefault();
-        saveGame();
-    }
-});
 
