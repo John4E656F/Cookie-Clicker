@@ -12,27 +12,24 @@ const bonusClickBtn = document.getElementById("bonusClick");
 let bonusBtnClicked = true;
 let bonusClick = 3;
 
-function randomBonus(){
-
     window.setTimeout( function() {
     bonusClickBtn.classList.remove("hidden");
     bonusBtnClicked = true;
+    }, Math.floor(Math.random() * 200000 + 10000));
 
-    }, Math.floor(Math.random() * 20000 + 1000000));
-};
 
 document.getElementById('bonusClick').addEventListener('click', () =>{
 
     if (bonusBtnClicked === true){
-        alert('You have activated a bonus! Your click earning is now doubled!');
-        let bonusClickeEarning = clickEarning;
-        bonusClickeEarning *= bonusClick;
+        alert('You have activated a bonus! Your click earning is now tripled for 30sec!');
+        let bonusClickEarning = clickEarning;
+        bonusClickEarning *= bonusClick;
         updateClickEarning();
         bonusClickBtn.classList.add("hidden");
         bonusBtnClicked = false;
         window.setTimeout(function(){
-            bonusClickeEarning /= bonusClick;
-            clickEarning = bonusClickeEarning;
+            bonusClickEarning /= bonusClick;
+            clickEarning = bonusClickEarning;
             updateClickEarning();
         }, 20000);
     }

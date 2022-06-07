@@ -39,19 +39,19 @@
     </div>
 
     <div class="flex justify-center pb-6 mt-6  m-auto  ">
-      <div class="m-auto p-3 shadow-lg rounded-full bg-orange-800/25 font-bold hidden" id="bonusClick">Bonus</div>
+      <div class="m-auto p-3 shadow-lg rounded-full transition ease-in-out delay-150 bg-red-500 hover:-translate-y-1 hover:scale-110 hover:bg-red-900 duration-300 font-bold animate-pulse hidden" id="bonusClick">Bonus</div>
     </div>
   </div>
 
   <div class="container mx-auto p4 w-96 overflow-hidden rounded-2xl bg-amber-600/100 text-white shadow-xl shadow-amber-600/40">
     <div class="flex flex-row p-4 gap-5 justify-center">
-      <div class="flex-none rounded-2xl p-2 px-4 px-4 bg-amber-800/25" id="upgrade">Upgrade</div>
-      <div class="flex-none rounded-2xl p-2 px-4 px-4 bg-amber-800/25" id="shop">Shop</div>
-      <div class="flex-none rounded-2xl p-2 px-4 px-4 bg-amber-800/25" id="helper">Helper</div>
+      <div class="flex-none rounded-2xl p-2 px-4 px-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" id="upgrade">Upgrade</div>
+      <div class="flex-none rounded-2xl p-2 px-4 px-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" id="shop">Shop</div>
+      <div class="flex-none rounded-2xl p-2 px-4 px-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" id="helper">Helper</div>
     </div>
 
     <!-- @note UpgradeList -->
-    <div class="flex flex-col p-4 gap-5 justify-center hidden" id="upgradeList">
+    <div class="flex flex-col p-4 gap-1 justify-center hidden" id="upgradeList">
 
       <table id="bRum"
         class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl shadow-xl bg-amber-800/25 "
@@ -95,7 +95,7 @@
     </div>
 
       <!-- @note shopList -->
-      <div class="flex flex-col p-4 gap-5 justify-center hidden" id="shopList">
+      <div class="flex flex-col p-4 gap-1 justify-center hidden" id="shopList">
 
         <table id="bAP"
           class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
@@ -142,44 +142,44 @@
 
 
       <!-- @note helpList -->
-      <div class="flex flex-col p-4 gap-5 justify-center hidden" id="helperList">
+      <div class="flex flex-col p-4 gap-1 justify-center " id="helperList">
 
         <table id="bJames"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
           onclick="buyJames()">
           <tr>
-            <td id="image"><img src="/src/assets/James_Franco.png"></td>
+            <td id="image" class="w-16 overflow-visible "><img src="/src/assets/James_Franco.png"></td>
             <td id="nameAndCost">
               <p>James Franco</p>
               <p><span id="jamesCost">50$</span></p>
             </td>
-            <td id="amount"><span id="james">0</span></td>
+            <td id="amount" class="pr-3"><span id="james">0</span></td>
           </tr>
         </table>
 
         <table id="bLawyer"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
           onclick="buyLawyer()">
           <tr>
-            <td id="image"><img src="/src/assets/avocate.png"></td>
-            <td id="nameAndCost">
+            <td id="image"><img class="w-20 " src="/src/assets/avocate.png"></td>
+            <td id="nameAndCost" >
               <p>Lawyers</p>
               <p><span id="lawyerCost">500$</span></p>
             </td>
-            <td id="amount"><span id="lawyers">0</span></td>
+            <td id="amount" class="pr-3"><span id="lawyers">0</span></td>
           </tr>
         </table>
 
         <table id="bElon"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
           onclick="buyElon()">
           <tr>
-            <td id="image"><img src="/src/assets/Elon.png"></td>
+            <td id="image"><img class="w-20 " src="/src/assets/Elon.png"></td>
             <td id="nameAndCost">
               <p>Elon Musk</p>
               <p><span id="elonCost">5000$</span></p>
             </td>
-            <td id="amount"><span id="elon">0</span></td>
+            <td id="amount" class="pr-3"><span id="elon">0</span></td>
           </tr>
         </table>
 
