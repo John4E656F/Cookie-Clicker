@@ -4,17 +4,19 @@ let clickEarning = 1;
 
 /* Adding an event listener to the element with the id "amberHeard" and when the element is clicked, it
 will add the value of clickEarning to the counter and update the counter on the page. */
-document.getElementById("amberHeard").addEventListener('click', ()=> {
+function clickToEarn(){
     counter += clickEarning;
     document.getElementById("counter").innerHTML = "$"+counter;
-     let moneyAnimate = document.createElement("p");
-        moneyAnimate.innerHTML = "+"+clickEarning;
-        document.getElementById("moneyAnimation").appendChild(moneyAnimate);
-        moneyAnimate.classList.add("moneyAnimation", "text-white"); // Add the class that animates
-        console.log('clicked');
-            setTimeout(()=>{
-            document.getElementById("moneyAnimation").removeChild(moneyAnimate);
-        }, 1000);
+    let moneyAnimate = document.createElement('p');
+    moneyAnimate.innerHTML = "$"+clickEarning;
+    document.getElementById("moneyAnimation").appendChild(moneyAnimate);
+    moneyAnimate.classList.add('animated', 'fadeInUp', 'text-white');
+    setTimeout(() => {
+        document.getElementById("moneyAnimation").removeChild(moneyAnimate);
+    },1000);
+}
+document.getElementById("amberHeard").addEventListener('click', ()=> {
+    clickToEarn();
 });
 
 const bonusClickBtn = document.getElementById("bonusClick");
