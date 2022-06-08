@@ -27,11 +27,12 @@ document.getElementById('bonusClick').addEventListener('click', () =>{
         updateClickEarning();
         bonusClickBtn.classList.add("hidden");
         bonusBtnClicked = false;
+        /* A timer that will divide the bonusClickEarning by the bonusClick after 30 seconds. */
         window.setTimeout(function(){
             bonusClickEarning /= bonusClick;
             clickEarning = bonusClickEarning;
             updateClickEarning();
-        }, 20000);
+        }, 30000);
     }
 });
 
