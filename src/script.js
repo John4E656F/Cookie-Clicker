@@ -5,7 +5,13 @@ let clickEarning = 1;
 will add the value of clickEarning to the counter and update the counter on the page. */
 document.getElementById("amberHeard").addEventListener('click', ()=> {
     counter += clickEarning;
-    document.getElementById("counter").innerHTML = counter+"$";
+    document.getElementById("counter").innerHTML = "$"+counter;
+     let moneyAnimate = document.createElement("p");
+        moneyAnimate.innerHTML = "+"+clickEarning;
+        document.getElementById("moneyAnimation").appendChild(moneyAnimate);
+        moneyAnimate.classList.add("moneyAnimation"); // Add the class that animates
+        console.log('clicked');
+
 });
 
 const bonusClickBtn = document.getElementById("bonusClick");
@@ -26,9 +32,10 @@ document.getElementById('bonusClick').addEventListener('click', () =>{
         bonusClickEarning *= bonusClick;
         updateClickEarning();
         bonusClickBtn.classList.add("hidden");
-        bonusBtnClicked = false;
+        
         /* A timer that will divide the bonusClickEarning by the bonusClick after 30 seconds. */
         window.setTimeout(function(){
+            bonusBtnClicked = false;
             bonusClickEarning /= bonusClick;
             clickEarning = bonusClickEarning;
             updateClickEarning();
@@ -113,7 +120,6 @@ document.getElementById('bRum').onclick = function buyRum(){
             }
         } 
     } else {
-        rumBought = true;
         document.getElementById("bRum").classList.add('pointer-events-none', 'cursor-not-allowed');
     }
 };
@@ -135,9 +141,7 @@ document.getElementById('bAqua').onclick = function buyAqua(){
             }
         }
     } else {
-        aquaBought = true;
         document.getElementById("bAqua").classList.add('pointer-events-none', 'cursor-not-allowed');
-        alert('Already bought');
     }
 };
 
@@ -152,29 +156,27 @@ document.getElementById('bMera').onclick = function buyMera(){
             if(counter >= meraCost){
                 counter -= meraCost;
                 clickEarning *= 2;
-                document.getElementById("counter").innerHTML = counter+"$";
+                document.getElementById("counter").innerHTML = "$"+counter;
                 document.getElementById("meraCost").innerHTML = "Bought";
                 meraBought = true;
             }
         }
     } else {
-        aquaBought = true;
         document.getElementById("bMera").classList.add('pointer-events-none', 'cursor-not-allowed');
-        alert('Already bought');
     }
 };
 
 function rumUnlocked(){
     if(rumBought === true){
         clickEarning *= 2;
-        document.getElementById("multi").innerHTML = clickEarning+"$";
+        document.getElementById("multi").innerHTML = "$"+clickEarning;
     }
 }
 
 function aquaUnlocked(){
     if(aquaBought === true){
         earnPerSec *= 2;
-        document.getElementById("multi").innerHTML = earnPerSec+"$";
+        document.getElementById("multi").innerHTML = "$"+earnPerSec;
     }
 }
 
@@ -192,8 +194,8 @@ document.getElementById('bAP').onclick = function buyAP(){
         clickEarning *= apMulti;
         apMulti += 1;
         apCost = Math.round(apCost * 1.5);
-        document.getElementById("counter").innerHTML = counter+"$";
-        document.getElementById("apCost").innerHTML = apCost+"$";
+        document.getElementById("counter").innerHTML = counter;
+        document.getElementById("apCost").innerHTML = apCost;
         document.getElementById("apMulti").innerHTML = apMulti;
         updateClickEarning();
     }
@@ -209,8 +211,8 @@ document.getElementById('bHand').onclick = function buyHand(){
         clickEarning *= handMulti;
         handMulti += 10;
         handCost = Math.round(handCost * 1.5);
-        document.getElementById("counter").innerHTML = counter+"$";
-        document.getElementById("handCost").innerHTML = handCost+"$";
+        document.getElementById("counter").innerHTML = "$"+counter;
+        document.getElementById("handCost").innerHTML = "$"+handCost;
         document.getElementById("handMulti").innerHTML = handMulti;
         updateClickEarning();
     }
@@ -226,8 +228,8 @@ document.getElementById('bMilani').onclick = function buyMilani(){
         clickEarning *= milanimulti;
         milanimulti += 100;
         milaniCost = Math.round(milaniCost * 1.5);
-        document.getElementById("counter").innerHTML = counter+"$";
-        document.getElementById("milaniCost").innerHTML = milaniCost+"$";
+        document.getElementById("counter").innerHTML = "$"+counter;
+        document.getElementById("milaniCost").innerHTML = "$"+milaniCost;
         document.getElementById("milaniMulti").innerHTML = milanimulti;
         updateClickEarning();
     }
@@ -246,8 +248,8 @@ document.getElementById("bJames").onclick = function buyJames(){
         james += 1;
         jamesCost = Math.round(jamesCost * 1.1);
 
-        document.getElementById("counter").innerHTML = counter+"$";
-        document.getElementById("jamesCost").innerHTML = jamesCost+"$";
+        document.getElementById("counter").innerHTML = "$"+counter;
+        document.getElementById("jamesCost").innerHTML = "$"+jamesCost;
         document.getElementById("james").innerHTML = james;
         updateEarning();
     }
@@ -266,8 +268,8 @@ document.getElementById("bLawyer").onclick = function buyLawyer(){
         lawyers += 1;
         lawyerCost = Math.round(lawyerCost * 1.2);
 
-        document.getElementById("counter").innerHTML = counter+"$";
-        document.getElementById("lawyerCost").innerHTML = lawyerCost+"$";
+        document.getElementById("counter").innerHTML = "$"+counter;
+        document.getElementById("lawyerCost").innerHTML = "$"+lawyerCost;
         document.getElementById("lawyers").innerHTML = lawyers;
         updateEarning();
     }
@@ -286,8 +288,8 @@ document.getElementById("bElon").onclick = function buyElon(){
         elon += 1;
         elonCost = Math.round(elonCost * 1.3);
 
-        document.getElementById("counter").innerHTML = counter+"$";
-        document.getElementById("elonCost").innerHTML = elonCost+"$";
+        document.getElementById("counter").innerHTML = "$"+counter;
+        document.getElementById("elonCost").innerHTML = "$"+elonCost;
         document.getElementById("elon").innerHTML = elon;
         updateEarning();
     }
@@ -298,7 +300,7 @@ setInterval (function() {
     counter += james;
     counter += lawyers * 5;
     counter += elon * 10;
-    document.getElementById("counter").innerHTML = counter+"$";
+    document.getElementById("counter").innerHTML = "$"+counter;
 }, 1000); // 1000ms = 1s
 
 let earnPerSec = 0;
@@ -306,7 +308,7 @@ let earnPerSec = 0;
 function updateEarning(){
     /* Updating the earnPerSec variable and updating the earnPerSec on the page. */
     earnPerSec = james + lawyers * 5 + elon * 10;
-    document.getElementById("earn").innerHTML = earnPerSec+"$";
+    document.getElementById("earn").innerHTML = "$"+earnPerSec;
 };
 
 
@@ -321,7 +323,7 @@ function updateClickEarning(){
     } else {
         clickEarning = apMulti + handMulti * 5 + milanimulti * 10 + bonusClick;
     }
-    document.getElementById("multi").innerHTML = clickEarning+"$";
+    document.getElementById("multi").innerHTML = "$"+clickEarning;
 };
 
 function paidJohnny(){
@@ -341,20 +343,20 @@ function paidJohnny(){
             handMulti = 0;
             milanimulti = 0;
             clickEarning = 1;
-            document.getElementById("counter").innerHTML = counter+"$";
+            document.getElementById("counter").innerHTML = "$"+counter;
             document.getElementById("james").innerHTML = james;
             document.getElementById("lawyers").innerHTML = lawyers;
             document.getElementById("elon").innerHTML = elon;
-            document.getElementById("jamesCost").innerHTML = jamesCost+"$";
-            document.getElementById("lawyerCost").innerHTML = lawyerCost+"$";
-            document.getElementById("elonCost").innerHTML = elonCost+"$";
-            document.getElementById("apCost").innerHTML = apCost+"$";
-            document.getElementById("handCost").innerHTML = handCost+"$";
-            document.getElementById("milaniCost").innerHTML = milaniCost+"$";
+            document.getElementById("jamesCost").innerHTML = "$"+jamesCost;
+            document.getElementById("lawyerCost").innerHTML = "$"+lawyerCost;
+            document.getElementById("elonCost").innerHTML = "$"+elonCost;
+            document.getElementById("apCost").innerHTML = "$"+apCost;
+            document.getElementById("handCost").innerHTML = "$"+handCost;
+            document.getElementById("milaniCost").innerHTML = "$"+milaniCost;
             document.getElementById("apMulti").innerHTML = apMulti;
             document.getElementById("handMulti").innerHTML = handMulti;
             document.getElementById("milaniMulti").innerHTML = milanimulti;
-            document.getElementById("multi").innerHTML = clickEarning+"$";
+            document.getElementById("multi").innerHTML = "$"+clickEarning;
     }
 };
 
@@ -384,6 +386,9 @@ document.getElementById("saveGame").onclick = function gameSaved() {
         handMulti: handMulti,
         milaniCost: milaniCost,
         milanimulti: milanimulti,
+        apBought: apBought,
+        handBought: handBought,
+        milaniBought: milaniBought,
 
     }
     localStorage.setItem("gameSave", JSON.stringify(gameSave));
@@ -415,6 +420,9 @@ setInterval (()=> {
         handMulti: handMulti,
         milaniCost: milaniCost,
         milanimulti: milanimulti,
+        apBought: apBought,
+        handBought: handBought,
+        milaniBought: milaniBought,
 
     }
     localStorage.setItem("gameSave", JSON.stringify(gameSave));
@@ -457,6 +465,9 @@ function loadGame(){
         handMulti = gameSave.handMulti;
         milaniCost = gameSave.milaniCost;
         milanimulti = gameSave.milanimulti;
+        apBought = gameSave.apBought;
+        handBought = gameSave.handBought;
+        milaniBought = gameSave.milaniBought;
     }
 };
 
@@ -474,19 +485,19 @@ window.onload = function () {
     loadGame();
     updateEarning();
     updateClickEarning();
-    document.getElementById("counter").innerHTML = counter+"$";
-    document.getElementById("lawyerCost").innerHTML = lawyerCost+"$";
+    document.getElementById("counter").innerHTML = "$"+counter;
+    document.getElementById("lawyerCost").innerHTML = "$"+lawyerCost;
     document.getElementById("lawyers").innerHTML = lawyers;
-    document.getElementById("jamesCost").innerHTML = jamesCost+"$";
+    document.getElementById("jamesCost").innerHTML = "$"+jamesCost;
     document.getElementById("james").innerHTML = james;
-    document.getElementById("elonCost").innerHTML = elonCost+"$";
+    document.getElementById("elonCost").innerHTML = "$"+elonCost;
     document.getElementById("elon").innerHTML = elon;
-    document.getElementById("apCost").innerHTML = apCost+"$";
-    document.getElementById("apMulti").innerHTML = apMulti+"$";
-    document.getElementById("handCost").innerHTML = handCost+"$";
-    document.getElementById("handMulti").innerHTML = handMulti+"$";
-    document.getElementById("milaniCost").innerHTML = milaniCost+"$";
-    document.getElementById("milaniMulti").innerHTML = milanimulti+"$";
-    document.getElementById("multi").innerHTML = clickEarning+"$";
+    document.getElementById("apCost").innerHTML = "$"+apCost;
+    document.getElementById("apMulti").innerHTML = "$"+apMulti;
+    document.getElementById("handCost").innerHTML = "$"+handCost;
+    document.getElementById("handMulti").innerHTML = "$"+handMulti;
+    document.getElementById("milaniCost").innerHTML = "$"+milaniCost;
+    document.getElementById("milaniMulti").innerHTML = "$"+milanimulti;
+    document.getElementById("multi").innerHTML = "$"+clickEarning;
 };
 

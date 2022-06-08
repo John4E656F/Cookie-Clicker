@@ -14,27 +14,29 @@
 
 
   <div
-    class="mx-auto m-2  w-96 text-center overflow-hidden rounded-2xl bg-amber-600/100 text-white shadow-xl shadow-amber-600/40">
-    <button onclick="gameSaved()" id="saveGame" class="m-2 p-3 rounded-full bg-amber-800/25 font-bold">Save
+    class="mx-auto m-3 p-3  w-96 text-center overflow-hidden rounded-sm bg-amber-600/100 text-white shadow-xl shadow-zinc-800">
+    <button onclick="gameSaved()" id="saveGame" class="m-2 p-3 rounded-md font-bold bg-amber-800/25 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer">Save
       Game</button>
-    <button onclick="resetGame()" id="resetGame" class="m-2 p-3 rounded-full bg-amber-800/25 font-bold">Reset
+    <button onclick="resetGame()" id="resetGame" class="m-2 p-3 rounded-md font-bold bg-amber-800/25 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer">Reset
       Game</button>
   </div>
 
 
-  <div class="m-auto  my-14 w-96 max-w-lg items-center justify-center overflow-hidden rounded-2xl shadow-xl shadow-amber-600/40  bg-amber-600">
+  <div class="m-auto my-14 w-96 max-w-lg items-center justify-center overflow-hidden rounded-sm shadow-xl shadow-zinc-800 bg-amber-600">
 
     <blockquote>
-      <p class="mx-2 mb-7 text-center text-base text-amber-100 font-bold mt-5">Help <em>Amber Heard</em> get 15million$</p>
+      <p class="mx-2 mb-7 text-center text-lg text-amber-100 font-bold mt-5">Help <em>Amber Heard</em> get $15million</p>
     </blockquote>
+    
     <div class="mt-5 mb-1 px-3 text-center text-lg text-amber-200" id="counter">0$</div>
-    <div class="w-52 m-auto p-1 rounded-tl-lg rounded-tr-lg bg-orange-800/75">
-      <div class="mt-5 px-3 text-center text-orange-100"><span id="multi">1$</span> Earnings/click</div>
-      <div class="mb-5 px-3 text-center text-orange-100"><span id="earn">0$</span> Earnings/sec</div>
+    <div class="w-52 m-auto p-1 rounded-tl-sm rounded-tr-sm bg-orange-800/75 ">
+      <div class="mt-5 px-3 text-center text-orange-100"><span id="multi">$1</span> Earn/Click</div>
+      <div class="mb-5 px-3 text-center text-orange-100"><span id="earn">$0</span> Earn/Sec</div>
     </div>
 
+    <div id="moneyAnimation" class="m-auto"></div>
     <div
-      class="flex justify-center pb-6 mb-6 border-x-4 border-b-4 border-orange-800/75 rounded-b-lg w-52 m-auto mb-3 shadow-lg shadow-zinc-800">
+      class="flex justify-center pb-6 mb-6 rounded-b-lg w-52 m-auto mb-3 shadow-md shadow-zinc-800">
       <img class="h-32 rounded-full" id="amberHeard" src="/src/assets/Ah-nbg.webp"  alt="amber heard"/>
     </div>
 
@@ -43,18 +45,18 @@
     </div>
   </div>
 
-  <div class="container mx-auto p4 w-96 overflow-hidden rounded-2xl bg-amber-600/100 text-white shadow-xl shadow-amber-600/40">
+  <div class="container mx-auto p4 w-96 overflow-hidden rounded-sm bg-amber-600/100 text-white shadow-xl shadow-zinc-800">
     <div class="flex flex-row p-4 gap-5 justify-center">
-      <div class="flex-none rounded-2xl p-2 px-4 px-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer" id="upgrade">Upgrade</div>
-      <div class="flex-none rounded-2xl p-2 px-4 px-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer" id="shop">Shop</div>
-      <div class="flex-none rounded-2xl p-2 px-4 px-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer" id="helper">Helper</div>
+      <div class="flex-none rounded-md p-2 px-4 px-4 transition ease-in-out delay-150 bg-amber-800/25 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" id="upgrade">Upgrade</div>
+      <div class="flex-none rounded-md p-2 px-4 px-4 transition ease-in-out delay-150 bg-amber-800/25 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" id="shop">Shop</div>
+      <div class="flex-none rounded-md p-2 px-4 px-4 transition ease-in-out delay-150 bg-amber-800/25 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" id="helper">Helper</div>
     </div>
 
     <!-- @note UpgradeList -->
     <div class="flex flex-col p-4 gap-1 justify-center hidden" id="upgradeList">
 
       <table id="bRum"
-        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl shadow-xl bg-amber-800/25 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
+        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
         onclick="buyRum()">
         <tr>
           <td id="image"><img src="" alt="Rum Diary"></td>
@@ -67,7 +69,7 @@
       </table>
 
       <table id="bAqua"
-        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
+        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-md bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
         onclick="buyAqua()">
         <tr>
           <td id="image"><img src="" alt="Aquaman"></td>
@@ -80,7 +82,7 @@
       </table>
 
       <table id="bMera"
-        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
+        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-md bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
         onclick="buyMera()">
         <tr>
           <td id="image"><img src="" alt="Mera"></td>
@@ -98,7 +100,7 @@
       <div class="flex flex-col p-4 gap-1 justify-center hidden" id="shopList">
 
         <table id="bAP"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
+          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-md bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyAP()">
           <tr>
             <td id="image"><img src="/src/assets/amber-poop.jpg" alt="Amber Heard Poop"></td>
@@ -112,7 +114,7 @@
 
 
         <table id="bHand"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
+          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-md bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyHand()">
           <tr>
             <td id="image"><img src="/src/assets/amber-hand.png" alt="Amber Heard hand"></td>
@@ -125,7 +127,7 @@
         </table>
 
         <table id="bMilani"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
+          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-md bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyMilani()">
           <tr>
             <td id="image"><img src="/src/assets/milani.webp" alt="Milani Makeup"></td>
@@ -145,7 +147,7 @@
       <div class="flex flex-col p-4 gap-1 justify-center " id="helperList">
 
         <table id="bJames"
-          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
+          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyJames()">
           <tr>
             <td  class="w-16 overflow-visible "><img id="image" src="/src/assets/James_Franco.webp" alt="James Franco"></td>
@@ -158,7 +160,7 @@
         </table>
 
         <table id="bLawyer"
-          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
+          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyLawyer()">
           <tr>
             <td id="image"><img class="w-20 " src="/src/assets/avocate.webp" alt="Amber Heard Lawyer"></td>
@@ -171,7 +173,7 @@
         </table>
 
         <table id="bElon"
-          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
+          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyElon()">
           <tr>
             <td id="image"><img  src="/src/assets/Elon.webp" alt="Elon Musk"></td>
