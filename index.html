@@ -30,14 +30,14 @@
     
     <div class="mt-5 mb-1 px-3 text-center text-lg text-amber-200" id="counter">0$</div>
     <div class="w-52 m-auto p-1 rounded-tl-sm rounded-tr-sm bg-orange-800/75 ">
-      <div class="mt-5 px-3 text-center text-orange-100"><span id="multi">$1</span> Earn/Click</div>
+      <div class="mt-5 px-3 text-center text-orange-100"><span id="bonusCounter" class="hidden">-</span><span id="multi">$1</span> Earn/Click</div>
       <div class="mb-5 px-3 text-center text-orange-100"><span id="earn">$0</span> Earn/Sec</div>
     </div>
 
     <div id="moneyAnimation" class="m-auto"></div>
     <div
       class="flex justify-center pb-6 mb-6 rounded-b-lg w-52 m-auto mb-3 shadow-md shadow-zinc-800">
-      <img class="h-32 rounded-full" id="amberHeard" src="/src/assets/Ah-nbg.webp"  alt="amber heard"/>
+      <img class="h-32 rounded-full cursor-pointer" id="amberHeard" src="/src/assets/Ah-nbg.webp"  alt="amber heard"/>
     </div>
 
     <div class="flex justify-center pb-6 mt-6  m-auto  ">
@@ -113,7 +113,7 @@
         </table>
 
 
-        <table id="bHand"
+        <table id="bHand" 
           class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-md bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyHand()">
           <tr>
@@ -127,10 +127,10 @@
         </table>
 
         <table id="bMilani"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-md bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
+          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyMilani()">
           <tr>
-            <td id="image"><img src="/src/assets/milani.webp" alt="Milani Makeup"></td>
+            <td id="image"><img class="w-20 " src="/src/assets/milani.webp" alt="Milani Makeup"></td>
             <td id="nameAndCost">
               <p>Milani</p>
               <p><span id="milaniCost">30$</span></p>
@@ -176,7 +176,9 @@
           class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyElon()">
           <tr>
-            <td id="image"><img  src="/src/assets/Elon-rsz.png" alt="Elon Musk"></td>
+
+            <td id="image"><img class="w-20" src="/src/assets/Elon.webp" alt="Elon Musk"></td>
+
             <td id="nameAndCost">
               <p>Elon Musk</p>
               <p><span id="elonCost">5000$</span></p>
@@ -222,6 +224,7 @@
 
 
   <script type="module" src="./src/script.js"></script>
+  <!-- <script type="module" src="./src/script2.js"></script> -->
 </body>
 
 </html>
