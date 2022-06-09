@@ -5,62 +5,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="/src/main.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <link href="./src/main.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 
+<body class=" container select-none h-screen max-w-full bg-stone-900 font-bold">
 
+  <main class="container flex flex-col sm:flex-row md:mt-5 md:ml-16 ">
 
-<body class="container select-none h-screen max-w-full bg-stone-900 font-bold justify-start">
+    <section class="md:mx-auto ">
 
+      <div class="   text-center overflow-hidden rounded-2xl  text-white md:px-12 bg-amber-600">
+        <button onclick="gameSaved()" id="saveGame" class="m-2 p-3 rounded-full bg-amber-800/25 font-bold shadow-xl shadow-amber-600/40">Save
+          Game</button>
+        <button onclick="resetGame()" id="resetGame" class="m-2 p-3 rounded-full bg-amber-800/25 font-bold shadow-xl shadow-amber-600/40">Reset
+          Game</button>
+        </div>
 
-  <div
-    class="mx-auto m-2  w-96 text-center overflow-hidden rounded-2xl text-white shadow-xl shadow-amber-600/40  bg-gradient-to-br from-amber-600 to-yellow-500 ">
-    <button onclick="gameSaved()" id="saveGame" class="m-2 p-3 rounded-full bg-amber-800/25 font-bold">Save
-      Game</button>
-    <button onclick="resetGame()" id="resetGame" class="m-2 p-3 rounded-full bg-amber-800/25 font-bold">Reset
-      Game</button>
-  </div>
+      <div class=" pb-8 md:px-32 my-8  items-center justify-center overflow-hidden rounded-2xl shadow-xl shadow-amber-600/40  bg-amber-600">
+        <blockquote>
+        <p class="mx-2 mb-7 text-center text-base text-amber-100 font-bold mt-5">Help <em>Amber Heard</em> get 15million$</p>
+        </blockquote>
+        <div class="mt-5 mb-1 px-3 text-center text-lg text-amber-200" id="counter">0$</div>
+        <div class="w-52 m-auto p-1 rounded-tl-lg rounded-tr-lg bg-orange-800/75">
+          <div class="mt-5 px-3 text-center text-orange-100"><span id="multi">1$</span> Earnings/click</div>
+          <div class="mb-5 px-3 text-center text-orange-100"><span id="earn">0$</span> Earnings/sec</div>
+        </div>
+    
+        <div class="flex justify-center pb-6 mb-6 border-x-4 border-b-4 border-orange-800/75 rounded-b-lg w-52 m-auto mb-3 shadow-lg shadow-zinc-800">
+          <img class=" rounded-full " id="amberHeard" src="./src/assets/Ah-nbg.webp"  alt="amber heard"/>
+        </div>
 
+      
+      </div>
 
-  <div
-    class="m-auto  my-14 w-96 max-w-lg items-center justify-center overflow-hidden rounded-2xl shadow-xl shadow-amber-600/40  bg-gradient-to-br from-amber-600 to-yellow-500">
+      <div class="flex justify-center    ">
+        <div class="hidden m-auto p-3 shadow-lg rounded-full transition ease-in-out delay-150 bg-red-500 hover:-translate-y-1 hover:scale-110 hover:bg-red-900 duration-300 font-bold animate-pulse " id="bonusClick">Bonus</div>
+        </div>
 
-    <blockquote>
-      <p class="mx-2 mb-7 text-center text-base text-amber-100 font-bold mt-5">Help <em>Amber Heard</em> get
-        15million$</p>
-    </blockquote>
+     
+     
+      </section>
+      
 
-    <div class="mt-5 mb-1 px-3 text-center text-lg text-amber-200" id="counter">0$</div>
-    <div class="w-44 m-auto p-1 rounded-tl-lg rounded-tr-lg  bg-orange-800/75">
-      <div class="mt-5 px-3 text-center text-orange-100"><span id="multi">1$</span> Earnings/click</div>
-      <div class="mb-5 px-3 text-center text-orange-100"><span id="earn">0$</span> Earnings/sec</div>
-    </div>
-
-    <div
-      class="flex justify-center pb-6 mb-6 border-x-4 border-b-4 border-orange-800/75 rounded-b-lg w-44 m-auto mb-3 shadow-lg shadow-zinc-800">
-      <img class="h-32 rounded-full" id="amberHeard" src="/src/assets/Ah-nbg.png" />
-    </div>
-
-  </div>
-
-  <div
-    class="container mx-auto p4 w-96 overflow-hidden rounded-2xl bg-amber-600/100 text-white shadow-xl  bg-gradient-to-br from-amber-600 to-yellow-500">
+  <section class="md:mx-auto md:mt-24 md:ml-4 ">
+  <div class=" md:ml-8 xl:px-7 overflow-hidden rounded-2xl bg-amber-600/100 text-white shadow-xl shadow-amber-600/40 md:mt-7">
     <div class="flex flex-row p-4 gap-5 justify-center">
-      <div class="flex-none rounded-2xl p-2 px-4 px-4 bg-amber-800/25" id="upgrade">Upgrade</div>
-      <div class="flex-none rounded-2xl p-2 px-4 px-4 bg-amber-800/25" id="shop">Shop</div>
-      <div class="flex-none rounded-2xl p-2 px-4 px-4 bg-amber-800/25" id="helper">Helper</div>
+      <div class="flex-none rounded-2xl p-2 px-4 px-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer" id="upgrade">Upgrade</div>
+      <div class="flex-none rounded-2xl p-2 px-4 px-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer" id="shop">Shop</div>
+      <div class="flex-none rounded-2xl p-2 px-4 px-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer" id="helper">Helper</div>
     </div>
 
     <!-- @note UpgradeList -->
-    <div class="flex flex-col p-4 gap-5 justify-center hidden" id="upgradeList">
+    <div class="flex flex-col p-4 gap-1 justify-center hidden" id="upgradeList">
 
       <table id="bRum"
-        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl shadow-xl bg-amber-800/25 "
+        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl shadow-xl bg-amber-800/25 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
         onclick="buyRum()">
         <tr>
-          <td id="image"><img src=""></td>
+          <td id="image"><img src="" alt="Rum Diary"></td>
           <td id="nameAndCost">
             <p>Rum Diary</p>
             <p><span id="rumCost">15million$</span></p>
@@ -70,10 +74,10 @@
       </table>
 
       <table id="bAqua"
-        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
         onclick="buyAqua()">
         <tr>
-          <td id="image"><img src=""></td>
+          <td id="image"><img src="" alt="Aquaman"></td>
           <td id="nameAndCost">
             <p>Aquaman</p>
             <p><span id="aquaCost">15million$</span></p>
@@ -83,10 +87,10 @@
       </table>
 
       <table id="bMera"
-        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+        class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
         onclick="buyMera()">
         <tr>
-          <td id="image"><img src=""></td>
+          <td id="image"><img src="" alt="Mera"></td>
           <td id="nameAndCost">
             <p>Mera</p>
             <p><span id="meraCost">1Billions$</span></p>
@@ -97,18 +101,14 @@
 
     </div>
 
-
-      <!-- @note UpgradeList -->
-
-
       <!-- @note shopList -->
-      <div class="flex flex-col p-4 gap-5 justify-center hidden" id="shopList">
+      <div class="flex flex-col p-4 gap-1 justify-center hidden" id="shopList">
 
         <table id="bAP"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
           onclick="buyAP()">
           <tr>
-            <td id="image"><img src=""></td>
+            <td id="image"><img src="./src/assets/amber-poop.jpg" alt="Amber Heard Poop"></td>
             <td id="nameAndCost">
               <p>Amber Poop</p>
               <p><span id="apCost">30$</span></p>
@@ -119,10 +119,10 @@
 
 
         <table id="bHand"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
           onclick="buyHand()">
           <tr>
-            <td id="image"><img src=""></td>
+            <td id="image"><img src="./src/assets/amber-hand.png" alt="Amber Heard hand"></td>
             <td id="nameAndCost">
               <p>Hand</p>
               <p><span id="handCost">30$</span></p>
@@ -132,10 +132,10 @@
         </table>
 
         <table id="bMilani"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
           onclick="buyMilani()">
           <tr>
-            <td id="image"><img src=""></td>
+            <td id="image"><img src="./src/assets/milani.webp" alt="Milani Makeup"></td>
             <td id="nameAndCost">
               <p>Milani</p>
               <p><span id="milaniCost">30$</span></p>
@@ -149,58 +149,58 @@
 
 
       <!-- @note helpList -->
-      <div class="flex flex-col p-4 gap-5 justify-center hidden" id="helperList">
+      <div class="flex flex-col p-4 gap-1 justify-center " id="helperList">
 
         <table id="bJames"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
           onclick="buyJames()">
           <tr>
-            <td id="image"><img src=""></td>
+            <td  class="w-16 overflow-visible "><img id="image" src="./src/assets/James_Franco.webp" alt="James Franco"></td>
             <td id="nameAndCost">
               <p>James Franco</p>
               <p><span id="jamesCost">50$</span></p>
             </td>
-            <td id="amount"><span id="james">0</span></td>
+            <td id="amount" class="pr-3"><span id="james">0</span></td>
           </tr>
         </table>
 
         <table id="bLawyer"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
           onclick="buyLawyer()">
           <tr>
-            <td id="image"><img src=""></td>
-            <td id="nameAndCost">
+            <td id="image"><img class="w-20 " src="./src/assets/avocate.webp" alt="Amber Heard Lawyer"></td>
+            <td id="nameAndCost" >
               <p>Lawyers</p>
               <p><span id="lawyerCost">500$</span></p>
             </td>
-            <td id="amount"><span id="lawyers">0</span></td>
+            <td id="amount" class="pr-3"><span id="lawyers">0</span></td>
           </tr>
         </table>
 
         <table id="bElon"
-          class="my-2 mx-auto w-60 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl"
+          class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-2xl bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer"
           onclick="buyElon()">
           <tr>
-            <td id="image"><img src=""></td>
+            <td id="image"><img  src="./src/assets/Elon.webp" alt="Elon Musk" class="w-20"></td>
             <td id="nameAndCost">
               <p>Elon Musk</p>
               <p><span id="elonCost">5000$</span></p>
             </td>
-            <td id="amount"><span id="elon">0</span></td>
+            <td id="amount" class="pr-3"><span id="elon">0</span></td>
           </tr>
         </table>
 
-
       </div>
    
-
-
-
-
   </div>
+</section>
+
+
+
 
 
   <!-- @note helpList -->
+
 
 
 
@@ -218,13 +218,10 @@
     </div>
   </div> -->
 
-  <div
-    class="m-auto  my-28 w-96 max-w-lg items-center justify-center overflow-hidden rounded-2xl bg-slate-200 shadow-xl">
-
-  </div>
+  
 
 
-
+</main>
   <script type="module" src="./src/script.js"></script>
 </body>
 
