@@ -18,6 +18,7 @@ document.getElementById("amberHeard").addEventListener('click', ()=> {
 });
 
 const bonusClickBtn = document.getElementById("bonusClick");
+
 let bonusBtnClicked = false;
 let bonusClick = 3;
 const bonusCounter = document.getElementById("bonusCounter");
@@ -27,6 +28,7 @@ const bonusCounter = document.getElementById("bonusCounter");
     bonusClickBtn.classList.remove("hidden");
     bonusBtnClicked = true;
     }, Math.floor(Math.random() * 10000 + 20000));
+
 
 
 document.getElementById('bonusClick').addEventListener('click', () =>{
@@ -42,6 +44,7 @@ document.getElementById('bonusClick').addEventListener('click', () =>{
         bonusBtnClicked = false;
         /* A timer that will divide the bonusClickEarning by the bonusClick after 30 seconds. */
         window.setTimeout(function(){
+
             bonusCounter.classList.add("hidden");
             bonusClickEarning /= bonusClick;
             clickEarning = bonusClickEarning;
@@ -125,7 +128,6 @@ document.getElementById('bRum').onclick = function buyRum(){
                 rumBought = true;
                 alert('You have bought Rum Diary! Your earning per click is now doubled!');
                 rumUnlocked();
-                
             }
         } 
     } else {
@@ -177,7 +179,9 @@ document.getElementById('bMera').onclick = function buyMera(){
 function rumUnlocked(){
     if(rumBought === true){
         clickEarning *= 2;
+
         document.getElementById("multi").innerHTML = "$"+clickEarning;
+
     }
 }
 
@@ -185,6 +189,7 @@ function aquaUnlocked(){
     if(aquaBought === true){
         earnPerSec *= 2;
         document.getElementById("multi").innerHTML = "$"+earnPerSec;
+
     }
 }
 
@@ -345,9 +350,11 @@ function updateClickEarning(){
         milaniBought = true;
         clickEarning = 1;
     } else {
+
         clickEarning = apMulti + handMulti  + milanimulti  ;
     }
     document.getElementById("multi").innerHTML = "$"+clickEarning;
+
 };
 
 function paidJohnny(){
@@ -449,6 +456,7 @@ setInterval (()=> {
         apBought: apBought,
         handBought: handBought,
         milaniBought: milaniBought,
+
 
     }
     localStorage.setItem("gameSave", JSON.stringify(gameSave));

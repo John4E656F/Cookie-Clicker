@@ -9,10 +9,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-
 <body class="container select-none h-screen max-w-full bg-stone-900 font-bold">
 
-
+   <main class="container flex flex-col sm:flex-row md:mt-5 md:ml-16 ">
+  
+    <section class="md:mx-auto ">
+      
   <div
     class="mx-auto m-3 p-3  w-96 text-center overflow-hidden rounded-sm bg-amber-600/100 text-white shadow-xl shadow-zinc-800">
     <button onclick="gameSaved()" id="saveGame" class="m-2 p-3 rounded-md font-bold bg-amber-800/25 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer">Save
@@ -22,7 +24,7 @@
   </div>
 
 
-  <div class="m-auto my-14 w-96 max-w-lg items-center justify-center overflow-hidden rounded-sm shadow-xl shadow-zinc-800 bg-amber-600">
+  <div class="m-auto md:px-32 my-8  my-14 w-96 max-w-lg items-center justify-center overflow-hidden rounded-sm shadow-xl shadow-zinc-800 bg-amber-600">
 
     <blockquote>
       <p class="mx-2 mb-7 text-center text-lg text-amber-100 font-bold mt-5">Help <em>Amber Heard</em> get $15million</p>
@@ -44,22 +46,27 @@
       <div class="m-auto p-3 shadow-lg rounded-full transition ease-in-out delay-150 bg-red-500 hover:-translate-y-1 hover:scale-110 hover:bg-red-900 duration-300 font-bold animate-pulse hidden" id="bonusClick">Bonus</div>
     </div>
   </div>
-
-  <div class="container mx-auto p4 w-96 overflow-hidden rounded-sm bg-amber-600/100 text-white shadow-xl shadow-zinc-800">
+      
+       </section>
+<section class="md:mx-auto md:mt-24 md:ml-4 ">
+  <div class="md:ml-8 xl:px-7 mx-auto p4 w-96 overflow-hidden rounded-sm bg-amber-600/100 text-white shadow-xl shadow-zinc-800 md:mt-7">
     <div class="flex flex-row p-4 gap-5 justify-center">
       <div class="flex-none rounded-md p-2 px-4 px-4 transition ease-in-out delay-150 bg-amber-800/25 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" id="upgrade">Upgrade</div>
       <div class="flex-none rounded-md p-2 px-4 px-4 transition ease-in-out delay-150 bg-amber-800/25 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" id="shop">Shop</div>
       <div class="flex-none rounded-md p-2 px-4 px-4 transition ease-in-out delay-150 bg-amber-800/25 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" id="helper">Helper</div>
+
     </div>
 
     <!-- @note UpgradeList -->
     <div class="flex flex-col p-4 gap-1 justify-center hidden" id="upgradeList">
 
       <table id="bRum"
+
         class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
         onclick="buyRum()">
         <tr>
           <td id="image"><img class="w-20" src="/src/assets/rum-rsz.png" alt="Rum Diary"></td>
+
           <td id="nameAndCost">
             <p>Rum Diary</p>
             <p><span id="rumCost">15million$</span></p>
@@ -69,10 +76,12 @@
       </table>
 
       <table id="bAqua"
+
         class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
         onclick="buyAqua()">
         <tr>
           <td id="image"><img class="w-20" src="/src/assets/Aquaman-m.png" alt="Aquaman"></td>
+
           <td id="nameAndCost">
             <p>Aquaman</p>
             <p><span id="aquaCost">15million$</span></p>
@@ -82,10 +91,12 @@
       </table>
 
       <table id="bMera"
+
         class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
         onclick="buyMera()">
         <tr>
           <td id="image"><img class="w-20" class="w-20" src="/src/assets/Mera.png" alt="Mera"></td>
+
           <td id="nameAndCost">
             <p>Mera</p>
             <p><span id="meraCost">1Billions$</span></p>
@@ -100,10 +111,12 @@
       <div class="flex flex-col p-4 gap-1 justify-center hidden" id="shopList">
 
         <table id="bAP"
+
           class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyAP()">
           <tr>
             <td id="image"><img class="w-20" src="/src/assets/amber-poop.jpg" alt="Amber Heard Poop"></td>
+
             <td id="nameAndCost">
               <p>Amber Poop</p>
               <p><span id="apCost">30$</span></p>
@@ -113,11 +126,14 @@
         </table>
 
 
+
         <table id="bHand" 
           class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyHand()">
           <tr>
+
             <td id="image"><img class="w-20" src="/src/assets/amber-hand.png" alt="Amber Heard hand"></td>
+
             <td id="nameAndCost">
               <p>Hand</p>
               <p><span id="handCost">30$</span></p>
@@ -127,10 +143,12 @@
         </table>
 
         <table id="bMilani"
+
           class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyMilani()">
           <tr>
             <td id="image"><img class="w-20" class="w-20 " src="/src/assets/milani.webp" alt="Milani Makeup"></td>
+
             <td id="nameAndCost">
               <p>Milani</p>
               <p><span id="milaniCost">30$</span></p>
@@ -147,10 +165,12 @@
       <div class="flex flex-col p-4 gap-1 justify-center " id="helperList">
 
         <table id="bJames"
+
           class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
           onclick="buyJames()">
           <tr>
             <td  class="w-16 overflow-visible "><img class="w-20" id="image" src="/src/assets/James_Franco.webp" alt="James Franco"></td>
+
             <td id="nameAndCost">
               <p>James Franco</p>
               <p><span id="jamesCost">50$</span></p>
@@ -160,10 +180,13 @@
         </table>
 
         <table id="bLawyer"
+
           class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
+
           onclick="buyLawyer()">
           <tr>
             <td id="image"><img class="w-20 " src="/src/assets/avocate.webp" alt="Amber Heard Lawyer"></td>
+
             <td id="nameAndCost" >
               <p>Lawyers</p>
               <p><span id="lawyerCost">500$</span></p>
@@ -173,10 +196,15 @@
         </table>
 
         <table id="bElon"
+
           class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
+
           onclick="buyElon()">
           <tr>
+
             <td id="image"><img class="w-20" src="/src/assets/Elon.webp" alt="Elon Musk"></td>
+
+
             <td id="nameAndCost">
               <p>Elon Musk</p>
               <p><span id="elonCost">5000$</span></p>
@@ -185,14 +213,13 @@
           </tr>
         </table>
 
-
       </div>
    
+  </div>
+</section>
 
 
   </div>
-
-
 
 
   <!-- @note helpList -->
@@ -214,13 +241,10 @@
     </div>
   </div> -->
 
-  <div
-    class="m-auto  my-28 w-96 max-w-lg items-center justify-center overflow-hidden rounded-2xl bg-slate-200 shadow-xl">
-
-  </div>
+  
 
 
-
+</main>
   <script type="module" src="./src/script.js"></script>
   <!-- <script type="module" src="./src/script2.js"></script> -->
 </body>
