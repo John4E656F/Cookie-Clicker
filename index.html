@@ -59,6 +59,7 @@
 
     <!-- @note UpgradeList -->
     <div class="flex flex-col p-4 gap-1 justify-center hidden" id="upgradeList">
+      
 
       <table id="bRum"
 
@@ -69,7 +70,7 @@
 
           <td id="nameAndCost">
             <p>Rum Diary</p>
-            <p><span id="rumCost">15million$</span></p>
+            <p><span id="rumCost" class="text-sm">15million$</span></p>
           </td>
           <td id="amount"><span id="rum">x2 earn/click</span></td>
         </tr>
@@ -80,11 +81,11 @@
         class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
         onclick="buyAqua()">
         <tr>
-          <td id="image"><img class="w-20" src="/src/assets/Aquaman-m.png" alt="Aquaman"></td>
+          <td id="image"><img class="w-24" src="/src/assets/Aquaman-m.png" alt="Aquaman"></td>
 
           <td id="nameAndCost">
             <p>Aquaman</p>
-            <p><span id="aquaCost">15million$</span></p>
+            <p><span id="aquaCost" class="text-sm" >15million$</span></p>
           </td>
           <td id="amount"><span id="aqua">x2 earn/sec</span></td>
         </tr>
@@ -95,11 +96,11 @@
         class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
         onclick="buyMera()">
         <tr>
-          <td id="image"><img class="w-20" class="w-20" src="/src/assets/Mera.png" alt="Mera"></td>
+          <td id="image"><img class="w-24" src="/src/assets/Mera.png" alt="Mera"></td>
 
           <td id="nameAndCost">
             <p>Mera</p>
-            <p><span id="meraCost">1Billions$</span></p>
+            <p><span id="meraCost" class="text-sm">1Billions$</span></p>
           </td>
           <td id="amount"><span id="mera">Unknown</span></td>
         </tr>
@@ -109,6 +110,7 @@
 
       <!-- @note shopList -->
       <div class="flex flex-col p-4 gap-1 justify-center hidden" id="shopList">
+        <p class="text-center">Earn per Click Bonus</p>
 
         <table id="bAP"
 
@@ -119,7 +121,7 @@
 
             <td id="nameAndCost">
               <p>Amber Poop</p>
-              <p><span id="apCost">30$</span></p>
+              <p><span id="apCost" class="text-sm">30$</span></p>
             </td>
             <td id="amount">Multiplier x<span id="apMulti">0</span></td>
           </tr>
@@ -136,7 +138,7 @@
 
             <td id="nameAndCost">
               <p>Hand</p>
-              <p><span id="handCost">30$</span></p>
+              <p><span id="handCost" class="text-sm">30$</span></p>
             </td>
             <td id="amount">Multiplier x<span id="handMulti">0</span></td>
           </tr>
@@ -151,7 +153,7 @@
 
             <td id="nameAndCost">
               <p>Milani</p>
-              <p><span id="milaniCost">30$</span></p>
+              <p><span id="milaniCost" class="text-sm">30$</span></p>
             </td>
             <td id="amount">Multiplier x<span id="milaniMulti">0</span></td>
           </tr>
@@ -163,6 +165,7 @@
 
       <!-- @note helpList -->
       <div class="flex flex-col p-4 gap-1 justify-center " id="helperList">
+        <p class="text-center">Earn per Sec Bonus</p>
 
         <table id="bJames"
 
@@ -173,7 +176,7 @@
 
             <td id="nameAndCost">
               <p>James Franco</p>
-              <p><span id="jamesCost">50$</span></p>
+              <p><span id="jamesCost" class="text-sm">50$</span></p>
             </td>
             <td id="amount" class="pr-3"><span id="james">0</span></td>
           </tr>
@@ -189,7 +192,7 @@
 
             <td id="nameAndCost" >
               <p>Lawyers</p>
-              <p><span id="lawyerCost">500$</span></p>
+              <p><span id="lawyerCost" class="text-sm">500$</span></p>
             </td>
             <td id="amount" class="pr-3"><span id="lawyers">0</span></td>
           </tr>
@@ -207,7 +210,7 @@
 
             <td id="nameAndCost">
               <p>Elon Musk</p>
-              <p><span id="elonCost">5000$</span></p>
+              <p><span id="elonCost" class="text-sm">5000$</span></p>
             </td>
             <td id="amount" class="pr-3"><span id="elon">0</span></td>
           </tr>
