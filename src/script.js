@@ -26,7 +26,7 @@ const bonusCounter = document.getElementById("bonusCounter");
     window.setInterval( function() {
     bonusClickBtn.classList.remove("hidden");
     bonusBtnClicked = true;
-    }, Math.floor(Math.random() * 100000 + 200000));
+    }, Math.floor(Math.random() * 10000 + 20000));
 
 
 document.getElementById('bonusClick').addEventListener('click', () =>{
@@ -110,7 +110,7 @@ document.getElementById("upgrade").addEventListener('click', ()=> {
     }
 });
 
-let rumCost = 50;
+let rumCost = 15000000;
 let rumBought = false;
 
 
@@ -125,6 +125,7 @@ document.getElementById('bRum').onclick = function buyRum(){
                 rumBought = true;
                 alert('You have bought Rum Diary! Your earning per click is now doubled!');
                 rumUnlocked();
+                
             }
         } 
     } else {
@@ -133,14 +134,14 @@ document.getElementById('bRum').onclick = function buyRum(){
 };
 
 
-let aquaCost = 50;
+let aquaCost = 15000000;
 let aquaBought = false;
 
 document.getElementById('bAqua').onclick = function buyAqua(){
     console.log('clicked');
     if(aquaBought === false){
-        alert('Rum Diary will permanently double your click earning!');
-        if(confirm('Are you sure you want to buy Rum Diary?')){
+        alert('Aquaman will permanently double your earning per second and will reset the game!');
+        if(confirm('Are you sure you want to buy Aquaman?')){
             if(counter >= aquaCost){
                 counter -= aquaCost;
                 document.getElementById("aquaCost").innerHTML = "Bought";
@@ -159,14 +160,13 @@ let meraBought = false;
 document.getElementById('bMera').onclick = function buyMera(){
     console.log('clicked');
     if(meraBought === false){
-        alert('Rum Diary will permanently double your click earning!');
-        if(confirm('Are you sure you want to buy Rum Diary?')){
+        alert('Mera is a unknowned special upgrade!');
+        if(confirm('Are you sure you want to buy Mera?')){
             if(counter >= meraCost){
                 counter -= meraCost;
                 clickEarning *= 2;
-                document.getElementById("counter").innerHTML = "$"+counter;
-                document.getElementById("meraCost").innerHTML = "Bought";
-                meraBought = true;
+                alert('Congratulations! You have just wasted you precious like on playing this stupid game!');
+                location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
             }
         }
     } else {
@@ -209,7 +209,7 @@ document.getElementById('bAP').onclick = function buyAP(){
     }
 }
 
-let handCost = 50;
+let handCost = 500;
 let handMulti = 0;
 let handBought = false;
 
@@ -226,7 +226,7 @@ document.getElementById('bHand').onclick = function buyHand(){
     }
 }
 
-let milaniCost = 50;
+let milaniCost = 1000;
 let milanimulti = 0;
 let milaniBought = false;
 
@@ -345,7 +345,7 @@ function updateClickEarning(){
         milaniBought = true;
         clickEarning = 1;
     } else {
-        clickEarning = apMulti + handMulti * 5 + milanimulti * 10 ;
+        clickEarning = apMulti + handMulti  + milanimulti  ;
     }
     document.getElementById("multi").innerHTML = "$"+clickEarning;
 };
