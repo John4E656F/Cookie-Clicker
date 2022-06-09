@@ -27,7 +27,7 @@ const bonusCounter = document.getElementById("bonusCounter");
     window.setInterval( function() {
     bonusClickBtn.classList.remove("hidden");
     bonusBtnClicked = true;
-    }, Math.floor(Math.random() * 10000 + 20000));
+    }, Math.floor(Math.random() * 100000 + 200000));
 
 
 
