@@ -1,4 +1,4 @@
-let counter = 100000;
+let counter = 0;
 let clickEarning = 1;
 
 /* Adding an event listener to the element with the id "amberHeard" and when the element is clicked, it
@@ -7,6 +7,35 @@ document.getElementById("amberHeard").addEventListener('click', ()=> {
     counter += clickEarning;
     document.getElementById("counter").innerHTML = counter+"$";
 });
+
+const bonusClickBtn = document.getElementById("bonusClick");
+let bonusBtnClicked = true;
+let bonusClick = 3;
+
+    window.setTimeout( function() {
+    bonusClickBtn.classList.remove("hidden");
+    bonusBtnClicked = true;
+    }, Math.floor(Math.random() * 200000 + 10000));
+
+
+document.getElementById('bonusClick').addEventListener('click', () =>{
+
+    if (bonusBtnClicked === true){
+        alert('You have activated a bonus! Your click earning is now tripled for 30sec!');
+        let bonusClickEarning = clickEarning;
+        bonusClickEarning *= bonusClick;
+        updateClickEarning();
+        bonusClickBtn.classList.add("hidden");
+        bonusBtnClicked = false;
+        /* A timer that will divide the bonusClickEarning by the bonusClick after 30 seconds. */
+        window.setTimeout(function(){
+            bonusClickEarning /= bonusClick;
+            clickEarning = bonusClickEarning;
+            updateClickEarning();
+        }, 30000);
+    }
+});
+
 
 const helperList = document.getElementById("helperList");
 const shopList = document.getElementById("shopList");
@@ -73,22 +102,19 @@ let rumBought = false;
 document.getElementById('bRum').onclick = function buyRum(){
     console.log('clicked');
     if(rumBought === false){
-        alert('Rum Diary will permanently double your click earning!');
+        alert('Rum Diary will permanently double your click earning and will reset the game!');
         if(confirm('Are you sure you want to buy Rum Diary?')){
             if(counter >= rumCost){
                 counter -= rumCost;
-                clickEarning *= 2;
-                document.getElementById("counter").innerHTML = counter+"$";
                 document.getElementById("rumCost").innerHTML = "Bought";
                 rumBought = true;
-                updateClickEarning();
                 alert('You have bought Rum Diary! Your earning per click is now doubled!');
+                rumUnlocked();
             }
         } 
     } else {
         rumBought = true;
         document.getElementById("bRum").classList.add('pointer-events-none', 'cursor-not-allowed');
-        alert('Already bought');
     }
 };
 
@@ -103,11 +129,9 @@ document.getElementById('bAqua').onclick = function buyAqua(){
         if(confirm('Are you sure you want to buy Rum Diary?')){
             if(counter >= aquaCost){
                 counter -= aquaCost;
-                earnPerSec *= 2;
-                document.getElementById("counter").innerHTML = counter+"$";
                 document.getElementById("aquaCost").innerHTML = "Bought";
                 aquaBought = true;
-                updateClickEarning();
+                aquaUnlocked();
             }
         }
     } else {
@@ -140,9 +164,27 @@ document.getElementById('bMera').onclick = function buyMera(){
     }
 };
 
+function rumUnlocked(){
+    if(rumBought === true){
+        clickEarning *= 2;
+        document.getElementById("multi").innerHTML = clickEarning+"$";
+    }
+}
+
+function aquaUnlocked(){
+    if(aquaBought === true){
+        earnPerSec *= 2;
+        document.getElementById("multi").innerHTML = earnPerSec+"$";
+    }
+}
+
+
+
+
 //@note shop
 let apCost = 50;
 let apMulti = 0;
+let apBought = false;
 
 document.getElementById('bAP').onclick = function buyAP(){
     if(counter >= apCost){
@@ -153,13 +195,13 @@ document.getElementById('bAP').onclick = function buyAP(){
         document.getElementById("counter").innerHTML = counter+"$";
         document.getElementById("apCost").innerHTML = apCost+"$";
         document.getElementById("apMulti").innerHTML = apMulti;
-        updateEarning();
         updateClickEarning();
     }
 }
 
 let handCost = 50;
 let handMulti = 0;
+let handBought = false;
 
 document.getElementById('bHand').onclick = function buyHand(){
     if(counter >= handCost){
@@ -170,24 +212,23 @@ document.getElementById('bHand').onclick = function buyHand(){
         document.getElementById("counter").innerHTML = counter+"$";
         document.getElementById("handCost").innerHTML = handCost+"$";
         document.getElementById("handMulti").innerHTML = handMulti;
-        updateEarning();
         updateClickEarning();
     }
 }
 
 let milaniCost = 50;
 let milanimulti = 0;
+let milaniBought = false;
 
 document.getElementById('bMilani').onclick = function buyMilani(){
     if(counter >= milaniCost){
         counter -= milaniCost;
-        clickEarning *= milaniMulti;
+        clickEarning *= milanimulti;
         milanimulti += 100;
         milaniCost = Math.round(milaniCost * 1.5);
         document.getElementById("counter").innerHTML = counter+"$";
         document.getElementById("milaniCost").innerHTML = milaniCost+"$";
         document.getElementById("milaniMulti").innerHTML = milanimulti;
-        updateEarning();
         updateClickEarning();
     }
 }
@@ -271,13 +312,55 @@ function updateEarning(){
 
 function updateClickEarning(){
     /* Updating the earnPerClick variable and updating the earnPerClick on the page. */
-    clickEarning = apMulti + handMulti + milanimulti;
+    
+    if(apBought == false || handBought == false || milaniBought == false){
+        apBought = true;
+        handBought = true;
+        milaniBought = true;
+        clickEarning = 1;
+    } else {
+        clickEarning = apMulti + handMulti * 5 + milanimulti * 10 + bonusClick;
+    }
     document.getElementById("multi").innerHTML = clickEarning+"$";
-}
+};
+
+function paidJohnny(){
+    if(counter >= 15000000){
+        alert('You are about to pay Johnny Depp, $15,000,000. This will reset the game with the permanent upgrade unlocked.');
+            counter = 0;
+            james = 0;
+            lawyers = 0;
+            elon = 0;
+            jamesCost = 30;
+            lawyerCost = 500;
+            elonCost = 1000;
+            apCost = 100;
+            handCost = 50;
+            milaniCost = 50;
+            apMulti = 0;
+            handMulti = 0;
+            milanimulti = 0;
+            clickEarning = 1;
+            document.getElementById("counter").innerHTML = counter+"$";
+            document.getElementById("james").innerHTML = james;
+            document.getElementById("lawyers").innerHTML = lawyers;
+            document.getElementById("elon").innerHTML = elon;
+            document.getElementById("jamesCost").innerHTML = jamesCost+"$";
+            document.getElementById("lawyerCost").innerHTML = lawyerCost+"$";
+            document.getElementById("elonCost").innerHTML = elonCost+"$";
+            document.getElementById("apCost").innerHTML = apCost+"$";
+            document.getElementById("handCost").innerHTML = handCost+"$";
+            document.getElementById("milaniCost").innerHTML = milaniCost+"$";
+            document.getElementById("apMulti").innerHTML = apMulti;
+            document.getElementById("handMulti").innerHTML = handMulti;
+            document.getElementById("milaniMulti").innerHTML = milanimulti;
+            document.getElementById("multi").innerHTML = clickEarning+"$";
+    }
+};
 
 //@note savegame
 /* Saving the game. */
-let saveGame = document.getElementById("saveGame").onclick = function gameSaved() {
+document.getElementById("saveGame").onclick = function gameSaved() {
     console.log("Game Saved");
     let gameSave = {
         counter: counter,
@@ -309,8 +392,43 @@ let saveGame = document.getElementById("saveGame").onclick = function gameSaved(
 //@note autoSave
 /* Saving the game every 30 seconds. */
 setInterval (()=> {
-    gameSaved();
+    console.log("Game Auto Saved");
+    let gameSave = {
+        counter: counter,
+        earnPerSec: earnPerSec,
+        jamesCost: jamesCost,
+        james: james,
+        lawyerCost: lawyerCost,
+        lawyers: lawyers,
+        elonCost: elonCost,
+        elon: elon,
+        apCost: apCost,
+        apMulti: apMulti,
+        handCost: handCost,
+        handMulti: handMulti,
+        milaniCost: milaniCost,
+        milanimulti: milanimulti,
+        clickEarning: clickEarning,
+        apCost: apCost,
+        apMulti: apMulti,
+        handCost: handCost,
+        handMulti: handMulti,
+        milaniCost: milaniCost,
+        milanimulti: milanimulti,
+
+    }
+    localStorage.setItem("gameSave", JSON.stringify(gameSave));
 }, 30000); // 30000ms = 30s
+
+//@note Ctrl + S save
+/* Saving the game when the user presses Ctrl + S. */
+document.addEventListener('keydown', function(event) {
+    if(event.ctrlKey && event.keyCode == 83) { // Ctrl + S
+        event.preventDefault();
+        gameSaved();
+    }
+});
+
 
 //@note loadgame
  /* If there is a gameSave in localStorage, then set the variables to the values in the gameSave.
@@ -355,6 +473,7 @@ document.getElementById("resetGame").onclick = function resetGame(){
 window.onload = function () {
     loadGame();
     updateEarning();
+    updateClickEarning();
     document.getElementById("counter").innerHTML = counter+"$";
     document.getElementById("lawyerCost").innerHTML = lawyerCost+"$";
     document.getElementById("lawyers").innerHTML = lawyers;
@@ -370,13 +489,4 @@ window.onload = function () {
     document.getElementById("milaniMulti").innerHTML = milanimulti+"$";
     document.getElementById("multi").innerHTML = clickEarning+"$";
 };
-
-//@note Ctrl + S save
-/* Saving the game when the user presses Ctrl + S. */
-document.addEventListener('keydown', function(event) {
-    if(event.ctrlKey && event.keyCode == 83) { // Ctrl + S
-        event.preventDefault();
-        saveGame();
-    }
-});
 
