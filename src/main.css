@@ -1,3 +1,26 @@
 * { 
     margin : 0;
 }
+
+
+#moneyAnimation {
+
+    width: 50px;
+    position: relative; /* Added */
+  }
+  
+  @keyframes moneyAnimation {
+    0% {
+      opacity: 1;
+      top: 0;
+    }
+    100% {
+      opacity: 0;
+      top: -50px;
+    }
+  }
+  
+  .moneyAnimation {
+    animation: moneyAnimation 1s forwards;
+    position: absolute;
+  }

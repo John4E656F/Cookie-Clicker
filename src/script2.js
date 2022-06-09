@@ -4,21 +4,22 @@ let clickEarning = 1;
 
 /* Adding an event listener to the element with the id "amberHeard" and when the element is clicked, it
 will add the value of clickEarning to the counter and update the counter on the page. */
-document.getElementById("amberHeard").addEventListener('click', ()=> {
+function clickToEarn(){
     counter += clickEarning;
     document.getElementById("counter").innerHTML = "$"+counter;
-     let moneyAnimate = document.createElement("p");
-        moneyAnimate.innerHTML = "+"+clickEarning;
-        document.getElementById("moneyAnimation").appendChild(moneyAnimate);
-        moneyAnimate.classList.add("moneyAnimation", "text-white"); // Add the class that animates
-        console.log('clicked');
-            setTimeout(()=>{
-            document.getElementById("moneyAnimation").removeChild(moneyAnimate);
-        }, 1000);
+    let moneyAnimate = document.createElement('p');
+    moneyAnimate.innerHTML = "$"+clickEarning;
+    document.getElementById("moneyAnimation").appendChild(moneyAnimate);
+    moneyAnimate.classList.add('animated', 'fadeInUp', 'text-white');
+    setTimeout(() => {
+        document.getElementById("moneyAnimation").removeChild(moneyAnimate);
+    },1000);
+}
+document.getElementById("amberHeard").addEventListener('click', ()=> {
+    clickToEarn();
 });
 
 const bonusClickBtn = document.getElementById("bonusClick");
-
 let bonusBtnClicked = false;
 let bonusClick = 3;
 const bonusCounter = document.getElementById("bonusCounter");
@@ -27,8 +28,7 @@ const bonusCounter = document.getElementById("bonusCounter");
     window.setInterval( function() {
     bonusClickBtn.classList.remove("hidden");
     bonusBtnClicked = true;
-    }, Math.floor(Math.random() * 10000 + 20000));
-
+    }, Math.floor(Math.random() * 100000 + 200000));
 
 
 document.getElementById('bonusClick').addEventListener('click', () =>{
@@ -44,7 +44,6 @@ document.getElementById('bonusClick').addEventListener('click', () =>{
         bonusBtnClicked = false;
         /* A timer that will divide the bonusClickEarning by the bonusClick after 30 seconds. */
         window.setTimeout(function(){
-
             bonusCounter.classList.add("hidden");
             bonusClickEarning /= bonusClick;
             clickEarning = bonusClickEarning;
@@ -113,7 +112,7 @@ document.getElementById("upgrade").addEventListener('click', ()=> {
     }
 });
 
-let rumCost = 15000000;
+let rumCost = 50;
 let rumBought = false;
 
 
@@ -136,14 +135,14 @@ document.getElementById('bRum').onclick = function buyRum(){
 };
 
 
-let aquaCost = 15000000;
+let aquaCost = 50;
 let aquaBought = false;
 
 document.getElementById('bAqua').onclick = function buyAqua(){
     console.log('clicked');
     if(aquaBought === false){
-        alert('Aquaman will permanently double your earning per second and will reset the game!');
-        if(confirm('Are you sure you want to buy Aquaman?')){
+        alert('Rum Diary will permanently double your click earning!');
+        if(confirm('Are you sure you want to buy Rum Diary?')){
             if(counter >= aquaCost){
                 counter -= aquaCost;
                 document.getElementById("aquaCost").innerHTML = "Bought";
@@ -162,13 +161,14 @@ let meraBought = false;
 document.getElementById('bMera').onclick = function buyMera(){
     console.log('clicked');
     if(meraBought === false){
-        alert('Mera is a unknowned special upgrade!');
-        if(confirm('Are you sure you want to buy Mera?')){
+        alert('Rum Diary will permanently double your click earning!');
+        if(confirm('Are you sure you want to buy Rum Diary?')){
             if(counter >= meraCost){
                 counter -= meraCost;
                 clickEarning *= 2;
-                alert('Congratulations! You have just wasted you precious like on playing this stupid game!');
-                location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+                document.getElementById("counter").innerHTML = "$"+counter;
+                document.getElementById("meraCost").innerHTML = "Bought";
+                meraBought = true;
             }
         }
     } else {
@@ -179,9 +179,7 @@ document.getElementById('bMera').onclick = function buyMera(){
 function rumUnlocked(){
     if(rumBought === true){
         clickEarning *= 2;
-
         document.getElementById("multi").innerHTML = "$"+clickEarning;
-
     }
 }
 
@@ -189,7 +187,6 @@ function aquaUnlocked(){
     if(aquaBought === true){
         earnPerSec *= 2;
         document.getElementById("multi").innerHTML = "$"+earnPerSec;
-
     }
 }
 
@@ -214,7 +211,7 @@ document.getElementById('bAP').onclick = function buyAP(){
     }
 }
 
-let handCost = 500;
+let handCost = 50;
 let handMulti = 0;
 let handBought = false;
 
@@ -231,7 +228,7 @@ document.getElementById('bHand').onclick = function buyHand(){
     }
 }
 
-let milaniCost = 1000;
+let milaniCost = 50;
 let milanimulti = 0;
 let milaniBought = false;
 
@@ -350,11 +347,9 @@ function updateClickEarning(){
         milaniBought = true;
         clickEarning = 1;
     } else {
-
-        clickEarning = apMulti + handMulti  + milanimulti  ;
+        clickEarning = apMulti + handMulti * 5 + milanimulti * 10 ;
     }
     document.getElementById("multi").innerHTML = "$"+clickEarning;
-
 };
 
 function paidJohnny(){
@@ -456,7 +451,6 @@ setInterval (()=> {
         apBought: apBought,
         handBought: handBought,
         milaniBought: milaniBought,
-
 
     }
     localStorage.setItem("gameSave", JSON.stringify(gameSave));
