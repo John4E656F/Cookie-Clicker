@@ -10,7 +10,7 @@
   <meta name="description" content="Help Amber Heard pay her debt! Clicker Game | Incremental Game">
   <link rel="icon" type="image/png" href="https://amberheard-clickergame.netlify.app/">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="/src/main.css" rel="stylesheet">
+  <link href="/index.0abe9af9.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   
 </head>
@@ -21,8 +21,7 @@
  
    <section class="md:mx-auto">
      
- <div
-   class="mx-auto m-3 p-3  w-96 text-center overflow-hidden rounded-sm bg-amber-600/100 text-white shadow-xl shadow-zinc-800">
+ <div class="mx-auto m-3 p-3  w-96 text-center overflow-hidden rounded-sm bg-amber-600/100 text-white shadow-xl shadow-zinc-800">
    <button onclick="gameSaved()" id="saveGame" class="m-2 p-3 rounded-md font-bold bg-amber-800/25 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer">Save
      Game</button>
    <button onclick="resetGame()" id="resetGame" class="m-2 p-3 rounded-md font-bold bg-amber-800/25 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer">Reset
@@ -43,9 +42,8 @@
    </div>
 
    <div id="moneyAnimation" class="m-auto"></div>
-   <div
-     class="flex justify-center pb-6 mb-6 rounded-b-lg w-52 m-auto mb-3 shadow-md shadow-zinc-800">
-     <img class="h-32 rounded-full cursor-pointer" id="amberHeard" src="/src/assets/Ah-nbg.webp"  alt="amber heard"/>
+   <div class="flex justify-center pb-6 mb-6 rounded-b-lg w-52 m-auto mb-3 shadow-md shadow-zinc-800">
+     <img class="h-32 rounded-full cursor-pointer" id="amberHeard" src="./Ah-nbg.cad08ac3.webp" alt="amber heard">
    </div>
 
    <div class="flex justify-center pb-6 mt-6    ">
@@ -67,12 +65,9 @@
    <div class="flex flex-col p-4 gap-1 justify-center hidden" id="upgradeList">
      
 
-     <table id="bRum"
-
-       class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
-       onclick="buyRum()">
+     <table id="bRum" class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" onclick="buyRum()">
        <tr>
-         <td id="image"><img class="w-20" src="/src/assets/rum-rsz.png" alt="Rum Diary"></td>
+         <td id="image"><img class="w-20" src="./rum-rsz.292a7764.png" alt="Rum Diary"></td>
 
          <td id="nameAndCost">
            <p>Rum Diary</p>
@@ -82,27 +77,21 @@
        </tr>
      </table>
 
-     <table id="bAqua"
-
-       class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
-       onclick="buyAqua()">
+     <table id="bAqua" class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" onclick="buyAqua()">
        <tr>
-         <td id="image"><img class="w-24" src="/src/assets/Aquaman-m.png" alt="Aquaman"></td>
+         <td id="image"><img class="w-24" src="./Aquaman-m.fe63f5b9.png" alt="Aquaman"></td>
 
          <td id="nameAndCost">
            <p>Aquaman</p>
-           <p><span id="aquaCost" class="text-sm" >15million$</span></p>
+           <p><span id="aquaCost" class="text-sm">15million$</span></p>
          </td>
          <td id="amount"><span id="aqua">x2 earn/sec</span></td>
        </tr>
      </table>
 
-     <table id="bMera"
-
-       class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
-       onclick="buyMera()">
+     <table id="bMera" class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" onclick="buyMera()">
        <tr>
-         <td id="image"><img class="w-24" src="/src/assets/Mera.png" alt="Mera"></td>
+         <td id="image"><img class="w-24" src="./Mera.38f2ee5a.png" alt="Mera"></td>
 
          <td id="nameAndCost">
            <p>Mera</p>
@@ -118,12 +107,9 @@
      <div class="flex flex-col p-4 gap-1 justify-center hidden" id="shopList">
        <p class="text-center">Earn per Click Bonus</p>
 
-       <table id="bAP"
-
-         class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
-         onclick="buyAP()">
+       <table id="bAP" class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" onclick="buyAP()">
          <tr>
-           <td id="image"><img class="w-20" src="/src/assets/amber-poop.jpg" alt="Amber Heard Poop"></td>
+           <td id="image"><img class="w-20" src="./amber-poop.c9d3a86c.jpg" alt="Amber Heard Poop"></td>
 
            <td id="nameAndCost">
              <p>Amber Poop</p>
@@ -135,12 +121,10 @@
 
 
 
-       <table id="bHand" 
-         class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
-         onclick="buyHand()">
+       <table id="bHand" class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" onclick="buyHand()">
          <tr>
 
-           <td id="image"><img class="w-20" src="/src/assets/amber-hand.png" alt="Amber Heard hand"></td>
+           <td id="image"><img class="w-20" src="./amber-hand.14fcb71b.png" alt="Amber Heard hand"></td>
 
            <td id="nameAndCost">
              <p>Hand</p>
@@ -150,12 +134,9 @@
          </tr>
        </table>
 
-       <table id="bMilani"
-
-         class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
-         onclick="buyMilani()">
+       <table id="bMilani" class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" onclick="buyMilani()">
          <tr>
-           <td id="image"><img class="w-20" class="w-20 " src="/src/assets/milani.webp" alt="Milani Makeup"></td>
+           <td id="image"><img class="w-20" src="./milani.bd40aa0e.webp" alt="Milani Makeup"></td>
 
            <td id="nameAndCost">
              <p>Milani</p>
@@ -173,12 +154,9 @@
      <div class="flex flex-col p-4 gap-1 justify-center " id="helperList">
        <p class="text-center">Earn per Sec Bonus</p>
 
-       <table id="bJames"
-
-         class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
-         onclick="buyJames()">
+       <table id="bJames" class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" onclick="buyJames()">
          <tr>
-           <td  class="w-16 overflow-visible "><img class="w-20" id="image" src="/src/assets/James_Franco.webp" alt="James Franco"></td>
+           <td class="w-16 overflow-visible "><img class="w-20" id="image" src="./James_Franco.630d58b9.webp" alt="James Franco"></td>
 
            <td id="nameAndCost">
              <p>James Franco</p>
@@ -188,15 +166,11 @@
          </tr>
        </table>
 
-       <table id="bLawyer"
-
-         class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
-
-         onclick="buyLawyer()">
+       <table id="bLawyer" class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" onclick="buyLawyer()">
          <tr>
-           <td id="image"><img class="w-20 " src="/src/assets/avocate.webp" alt="Amber Heard Lawyer"></td>
+           <td id="image"><img class="w-20 " src="./avocate.752621f4.webp" alt="Amber Heard Lawyer"></td>
 
-           <td id="nameAndCost" >
+           <td id="nameAndCost">
              <p>Lawyers</p>
              <p><span id="lawyerCost" class="text-sm">500$</span></p>
            </td>
@@ -204,14 +178,10 @@
          </tr>
        </table>
 
-       <table id="bElon"
-
-         class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer"
-
-         onclick="buyElon()">
+       <table id="bElon" class="my-2 mx-auto w-80 max-w-lg items-center justify-center text-center overflow-hidden rounded-md shadow-md shadow-zinc-800 bg-amber-800/25 shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300 cursor-pointer" onclick="buyElon()">
          <tr>
 
-           <td id="image"><img class="w-20" src="/src/assets/Elon.webp" alt="Elon Musk"></td>
+           <td id="image"><img class="w-20" src="./Elon.8b2c38c1.webp" alt="Elon Musk"></td>
 
 
            <td id="nameAndCost">
@@ -228,7 +198,7 @@
 </section>
 
 
- </div>
+ 
 
 
  <!-- @note helpList -->
@@ -254,7 +224,7 @@
 
 
 </main>
- <script type="module" src="./src/script.js"></script>
+ <script src="/index.db944f26.js" defer=""></script>
  <!-- <script type="module" src="./src/script2.js"></script> -->
 </body>
 
